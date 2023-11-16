@@ -72,3 +72,5 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 #Odin Plugin files
 [Aa]ssets/Plugins/Sirenix/
+#Remove .idea 
+.idea
