@@ -14,9 +14,8 @@ namespace DefaultNamespace
 
         [SerializeField]
         protected Slider markSlider;
+
         
-        protected abstract void CheckProgress();
-        protected abstract void RegenerateMovement();
         protected abstract void MoveOther();
 
         protected override void HandleMovement()
@@ -25,6 +24,33 @@ namespace DefaultNamespace
             MoveOther();
             base.HandleMovement();
             KeepInBounds();
+        }
+        
+        private void RegenerateMovement()
+        {
+            if (TimeElapsed > data.movementRegenerateTime)
+            {
+                TimeElapsed = 0;
+                OtherSpeed = Random.Range(data.otherMovement.x, data.otherMovement.y);
+            }
+            else
+            {
+                TimeElapsed += UnityEngine.Time.deltaTime;
+            }
+        }
+        
+        protected override void HandleInput()
+        {
+            if (Input.GetKey(KeyCode.A))
+            {
+                RockPosition -= data.rockSpeed;
+            }
+            else if (Input.GetKey(KeyCode.D))
+            {
+                RockPosition += data.rockSpeed;
+            }
+            
+            CheckProgress();
         }
 
         protected virtual void KeepInBounds()
@@ -46,6 +72,17 @@ namespace DefaultNamespace
             {
                 MarkPosition = data.otherRange.x;
             }
+        }
+        
+        protected bool CheckProgress()
+        {
+            if (RockPosition <= MarkPosition + data.markMargin && RockPosition >= MarkPosition - data.markMargin)
+            {
+                Progress++;
+                return true;
+            }
+
+            return false;
         }
     }
 }

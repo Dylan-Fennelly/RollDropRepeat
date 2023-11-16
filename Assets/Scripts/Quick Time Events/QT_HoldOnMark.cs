@@ -1,28 +1,31 @@
-﻿namespace DefaultNamespace
+﻿using System;
+
+namespace DefaultNamespace
 {
     public class QT_HoldOnMark : QuickTimeEventWithMark
     {
-        protected override void HandleInput()
+        private void Awake()
         {
-            throw new System.NotImplementedException();
-        }
-
-        protected override void CheckProgress()
-        {
-            if (RockPosition <= MarkPosition + data.markMargin && RockPosition >= MarkPosition - data.markMargin)
-            {
-                Progress++;
-            }
-        }
-
-        protected override void RegenerateMovement()
-        {
-            throw new System.NotImplementedException();
+            MarkPosition = 70;
         }
 
         protected override void MoveOther()
         {
-            throw new System.NotImplementedException();
+            if (TimeToMove > data.movementTick)
+            {
+                MarkPosition += OtherSpeed;
+                TimeToMove = 0;
+            }
+            else
+            {
+                TimeToMove += UnityEngine.Time.deltaTime;
+            }
+        }
+        
+        protected override void HandleMovement()
+        {
+            base.HandleMovement();
+            markSlider.value = MarkPosition;
         }
     }
 }

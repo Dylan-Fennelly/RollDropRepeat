@@ -13,41 +13,6 @@ namespace DefaultNamespace
             MarkPosition = 50;
         }
 
-        protected override void HandleInput()
-        {
-            if (Input.GetKey(KeyCode.A))
-            {
-                RockPosition -= data.rockSpeed;
-            }
-            else if (Input.GetKey(KeyCode.D))
-            {
-                RockPosition += data.rockSpeed;
-            }
-            
-            CheckProgress();
-        }
-
-        protected override void CheckProgress()
-        {
-            if (RockPosition <= MarkPosition + data.markMargin && RockPosition >= MarkPosition - data.markMargin)
-            {
-                Progress++;
-            }
-        }
-
-        protected override void RegenerateMovement()
-        {
-            if (TimeElapsed > data.movementRegenerateTime)
-            {
-                TimeElapsed = 0;
-                OtherSpeed = Random.Range(data.otherMovement.x, data.otherMovement.y);
-            }
-            else
-            {
-                TimeElapsed += UnityEngine.Time.deltaTime;
-            }
-        }
-
         protected override void MoveOther()
         {
             if (TimeToMove > data.movementTick)
