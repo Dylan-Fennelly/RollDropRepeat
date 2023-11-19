@@ -6,20 +6,21 @@ namespace DefaultNamespace
 {
     public class QT_Timming : QuickTimeEventWithMark
     {
-        private int fail = 0;
         private int direction = 1;
         private bool canScore = true;
-
-        private void Awake()
+        
+        public override void StartQTE()
         {
+            base.StartQTE();
+            RockPosition = 0;
             MarkPosition = Random.Range(data.otherRange.x, data.otherRange.y);
         }
 
         protected override void HandleInput()
         {
-            if (Input.GetKeyUp(KeyCode.W) && canScore)
+            if (Input.GetKeyDown(KeyCode.W) && canScore)
             {
-                if (!CheckProgress()) fail++;
+                CheckProgress();
                 canScore = false;
             }
         }

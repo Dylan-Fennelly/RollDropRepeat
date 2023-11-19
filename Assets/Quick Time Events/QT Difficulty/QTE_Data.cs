@@ -2,7 +2,7 @@
 
 namespace DefaultNamespace
 {
-    [CreateAssetMenu(menuName = "ScriptableObjects/QTE_Data", fileName = "QTE_Data")]
+    [CreateAssetMenu(menuName = "ScriptableObjects/QTE/QTE_Data", fileName = "QTE_Data")]
     public class QTE_Data : ScriptableObject
     {
         public float goal;

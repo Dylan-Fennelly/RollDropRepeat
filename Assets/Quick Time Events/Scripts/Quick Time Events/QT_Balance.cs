@@ -7,8 +7,9 @@ namespace DefaultNamespace
 {
     public class QT_Balance : QuickTimeEventWithMark
     {
-        private void Awake()
+        public override void StartQTE()
         {
+            base.StartQTE();
             RockPosition = 50;
             MarkPosition = 50;
         }

@@ -18,10 +18,8 @@ public abstract class QuickTimeEvent : MonoBehaviour
     [SerializeField]
     protected Slider rockSlider;
     
-    
-    void Start()
-    {
-    }
+    [SerializeField]
+    protected Camera cam;
 
     // Update is called once per frame
     void Update()
@@ -50,13 +48,13 @@ public abstract class QuickTimeEvent : MonoBehaviour
         }
     }
     
-    public void StartQTE()
+    public virtual void StartQTE()
     {
         IsRunning = true;
         IsFinished = false;
         Progress = 0;
         Time = UnityEngine.Time.time;
-        RockPosition = 0;
+        cam.enabled = true;
     }
 
     protected void Finish()
@@ -82,5 +80,6 @@ public abstract class QuickTimeEvent : MonoBehaviour
         {
             //Average outcome
         }
+        cam.enabled = false;
     }
 }

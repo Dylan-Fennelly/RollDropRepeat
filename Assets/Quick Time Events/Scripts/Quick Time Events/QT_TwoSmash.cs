@@ -5,7 +5,7 @@ namespace DefaultNamespace
     public class QT_TwoSmash : QuickTimeEvent
     {
         private bool isA = true;
-        private KeyCode[] key = { KeyCode.A, KeyCode.D};
+        private KeyCode[] key = {KeyCode.A, KeyCode.D};
         
         protected override void HandleInput()
         {

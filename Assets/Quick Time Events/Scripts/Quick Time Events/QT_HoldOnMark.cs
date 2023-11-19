@@ -4,8 +4,10 @@ namespace DefaultNamespace
 {
     public class QT_HoldOnMark : QuickTimeEventWithMark
     {
-        private void Awake()
+        
+        public override void StartQTE()
         {
+            base.StartQTE();
             MarkPosition = 70;
         }
 

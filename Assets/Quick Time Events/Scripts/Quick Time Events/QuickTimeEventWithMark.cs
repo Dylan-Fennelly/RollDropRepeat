@@ -5,13 +5,12 @@ namespace DefaultNamespace
 {
     public abstract class QuickTimeEventWithMark : QuickTimeEvent
     {
-        protected float MarkPosition;
-        
         protected float OtherSpeed;
         
         protected float TimeElapsed = 0;
         protected float TimeToMove = 0;
-
+        
+        protected float MarkPosition;
         [SerializeField]
         protected Slider markSlider;
 
