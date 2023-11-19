@@ -1,4 +1,5 @@
 ﻿using System;
+using UnityEngine;
 
 namespace DefaultNamespace
 {
@@ -9,6 +10,20 @@ namespace DefaultNamespace
         {
             base.StartQTE();
             MarkPosition = 70;
+        }
+        
+        protected override void HandleInput()
+        {
+            if (Input.GetKey(KeyCode.D))
+            {
+                RockPosition += data.rockSpeed;
+            }
+            else
+            {
+                RockPosition -= data.rockSpeed;
+            }
+            
+            CheckProgress();
         }
 
         protected override void MoveOther()
