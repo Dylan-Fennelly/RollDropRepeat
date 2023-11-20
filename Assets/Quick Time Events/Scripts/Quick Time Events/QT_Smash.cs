@@ -12,5 +12,12 @@ namespace DefaultNamespace
                 RockPosition = Progress / data.goal;
             }
         }
+
+        public override void StartQTE()
+        {
+            base.StartQTE();
+            RockPosition = 0;
+            rockSlider.value = RockPosition;
+        }
     }
 }

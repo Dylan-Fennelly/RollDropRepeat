@@ -16,5 +16,11 @@ namespace DefaultNamespace
                 isA = !isA;
             }
         }
+        
+        public override void StartQTE()
+        {
+            base.StartQTE();
+            RockPosition = 0;
+        }
     }
 }

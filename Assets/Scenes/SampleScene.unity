@@ -424,7 +424,7 @@ GameObject:
   m_Component:
   - component: {fileID: 244463239}
   m_Layer: 0
-  m_Name: 'Updated QTE UI '
+  m_Name: 'QTE UI '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4787,6 +4787,6 @@ SceneRoots:
   - {fileID: 265361773}
   - {fileID: 2071003640}
   - {fileID: 244463239}
-  - {fileID: 1447286309}
   - {fileID: 1955778291}
   - {fileID: 1991946192}
+  - {fileID: 1447286309}
