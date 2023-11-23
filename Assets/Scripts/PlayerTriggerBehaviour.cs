@@ -6,7 +6,7 @@ using Events.Base;
 using Events.GameEvents;
 using UnityEngine;
 
-public class PlayerTriggerOnObstacle : MonoBehaviour
+public class PlayerTriggerBehaviour : MonoBehaviour
 {
     
     private void OnTriggerEnter(Collider other)
@@ -15,5 +15,10 @@ public class PlayerTriggerOnObstacle : MonoBehaviour
         {
             other.GetComponent<StartTrigger>().StartEvent();
         }
+        if (other.CompareTag("Enemy"))
+        {
+            other.GetComponent<EncounterTrigger>().HandleEncounter();
+        }
+
     }
 }
