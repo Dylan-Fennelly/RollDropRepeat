@@ -11,8 +11,18 @@ public class EnemyBehaviour : MonoBehaviour
     
     public void HandleEncounter(Enemy_Data data)
     {
-        willEvent.Raise(data.willGain);
-        guiltEvent.Raise(data.guiltGain);
+        if (data.hasRequirement)
+        {
+            willEvent.Raise(data.altGuiltGain);
+            guiltEvent.Raise(data.altGuiltGain);
+            Debug.Log("Encounter with requirement");
+        }
+        else
+        {
+            willEvent.Raise(data.willGain);
+            guiltEvent.Raise(data.guiltGain);
+            Debug.Log("Encounter");
+        }
     }
     
     
