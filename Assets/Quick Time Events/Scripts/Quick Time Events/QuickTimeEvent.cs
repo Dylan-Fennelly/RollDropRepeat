@@ -1,4 +1,5 @@
 using DefaultNamespace;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -21,7 +22,17 @@ public abstract class QuickTimeEvent : MonoBehaviour
     [SerializeField]
     protected Camera cam;
 
+    protected PlayerMovement playerMovement;
+
     // Update is called once per frame
+    void Awake()
+    {
+        playerMovement = FindObjectOfType<PlayerMovement>();
+        if(playerMovement == null)
+        {
+            Debug.LogError("No player movement found");
+        }
+    }   
     void Update()
     {
         if (IsRunning)
@@ -52,6 +63,10 @@ public abstract class QuickTimeEvent : MonoBehaviour
     {
         IsRunning = true;
         IsFinished = false;
+        if(playerMovement != null)
+        {
+            playerMovement.canMove = false;
+        }
         Progress = 0;
         Time = UnityEngine.Time.time;
         cam.enabled = true;
@@ -61,6 +76,10 @@ public abstract class QuickTimeEvent : MonoBehaviour
     {
         IsFinished = true;
         IsRunning = false;
+        if(playerMovement != null)
+        {
+            playerMovement.canMove = true;
+        }
         Time = UnityEngine.Time.time - Time;
         HandleOutcome(Time);
         Debug.Log(Time);

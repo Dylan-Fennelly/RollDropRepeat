@@ -1,6 +1,5 @@
 using UnityEngine;
 using Sirenix.OdinInspector;
-using System.Collections;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -14,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
 
     private CharacterController characterController;
     private bool isMoving = false;
+    public bool canMove = true;
 
     private void Start()
     {
@@ -23,7 +23,7 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         // If the player is not currently moving, allow input
-        if (!isMoving)
+        if (!isMoving && canMove)
         {
             // Handle player movement
             MovePlayer();
@@ -32,7 +32,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void MovePlayer()
     {
-        // Get input for horizontal movement (left or right)
+        // Get digital input for horizontal movement (left or right)
         float horizontalInput = Input.GetAxisRaw("Horizontal");
 
         // Check if there is significant input
@@ -46,7 +46,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private IEnumerator MovePlayerCoroutine(Vector3 movement)
+    private System.Collections.IEnumerator MovePlayerCoroutine(Vector3 movement)
     {
         // Set isMoving to true to prevent additional input during movement
         isMoving = true;
