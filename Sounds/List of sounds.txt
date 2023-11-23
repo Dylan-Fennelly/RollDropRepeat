@@ -1,0 +1,12 @@
+- steps (self produced)
+- rock rolling (self produced)
+- character noises (self produced)
+- hades sounds (self produced)
+- QT music (sourced)
+- background music (sourced)
+- QTE sounds (sourced)
+- win sounds (sourced)
+- lose sounds (sourced)
+- guilt picking up
+- motivation sounds
+- spirit noises
