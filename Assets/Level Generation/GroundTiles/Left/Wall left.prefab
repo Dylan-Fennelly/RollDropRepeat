@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: greek_wall_2
       objectReference: {fileID: 0}
+    - target: {fileID: 1705161575557264, guid: 6b66ad43b05274620bc8695d0e1cebb2, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 4265774377246732, guid: 6b66ad43b05274620bc8695d0e1cebb2, type: 3}
       propertyPath: m_LocalScale.x
       value: 3.634
