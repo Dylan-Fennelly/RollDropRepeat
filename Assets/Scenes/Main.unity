@@ -1754,7 +1754,7 @@ MonoBehaviour:
   - {fileID: 2157907915653191107, guid: b48054d3a63d26e45b754e2399aeeb74, type: 3}
   angleBetweenGrounds: 15
   deletionOffsetMultiplier: 20
-  movementSpeed: 70
+  movementSpeed: 1
   fixedOffset: {x: 0, y: 4.45, z: 17.32}
   initialPosition: {x: 0, y: 0, z: 0}
 --- !u!4 &577378011
@@ -3480,7 +3480,7 @@ MonoBehaviour:
   - {fileID: 7488417528933354221, guid: 021e9fe5219c7794b97a813af8043a98, type: 3}
   angleBetweenGrounds: 15
   deletionOffsetMultiplier: 20
-  movementSpeed: 70
+  movementSpeed: 1
   fixedOffset: {x: 0, y: 4.45, z: 17.32}
   initialPosition: {x: -18, y: 0, z: 0}
 --- !u!4 &1499807478
@@ -4755,7 +4755,7 @@ MonoBehaviour:
   - {fileID: 7488417528933354221, guid: 43a3a68defebba0469380cbbc658470d, type: 3}
   angleBetweenGrounds: 15
   deletionOffsetMultiplier: 20
-  movementSpeed: 70
+  movementSpeed: 1
   fixedOffset: {x: 0, y: 4.45, z: 17.32}
   initialPosition: {x: 18, y: 0, z: 0}
 --- !u!4 &2027568598
