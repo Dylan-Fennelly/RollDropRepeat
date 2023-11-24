@@ -8,6 +8,14 @@ public class CameraFollow : MonoBehaviour
     [SerializeField]
     private float smoothness = 5f;
 
+
+    private void Awake()
+    {
+        if (playerTransform == null)
+        {
+            playerTransform = FindObjectOfType<PlayerMovement>().transform;
+        }
+    }
     private void LateUpdate()
     {
         if (playerTransform != null)

@@ -28,6 +28,7 @@ public class PlayerMovement : MonoBehaviour
             // Handle player movement
             MovePlayer();
         }
+
     }
 
     private void MovePlayer()
