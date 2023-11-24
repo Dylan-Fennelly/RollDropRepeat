@@ -24,6 +24,8 @@ public abstract class QuickTimeEvent : MonoBehaviour
 
     protected PlayerMovement playerMovement;
 
+    private ProceduralGenerationManager manager;
+
     // Update is called once per frame
     void Awake()
     {
@@ -31,6 +33,11 @@ public abstract class QuickTimeEvent : MonoBehaviour
         if(playerMovement == null)
         {
             Debug.LogError("No player movement found");
+        }
+        manager = FindObjectOfType<ProceduralGenerationManager>();
+        if(manager == null)
+        {
+            Debug.LogError("No procedural generation manager found");
         }
     }   
     void Update()
@@ -67,6 +74,10 @@ public abstract class QuickTimeEvent : MonoBehaviour
         {
             playerMovement.canMove = false;
         }
+        if (manager != null)
+        {
+            manager.OnMiniGameStart();
+        }
         Progress = 0;
         Time = UnityEngine.Time.time;
         cam.enabled = true;
@@ -79,6 +90,10 @@ public abstract class QuickTimeEvent : MonoBehaviour
         if(playerMovement != null)
         {
             playerMovement.canMove = true;
+        }
+        if (manager != null)
+        {
+            manager.OnMiniGameEnd();
         }
         Time = UnityEngine.Time.time - Time;
         HandleOutcome(Time);

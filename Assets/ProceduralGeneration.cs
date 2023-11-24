@@ -1,10 +1,11 @@
+// ProceduralGeneration.cs
 using System.Collections.Generic;
 using UnityEngine;
 
 public class ProceduralGeneration : MonoBehaviour
 {
     public GameObject groundPrefab;
-    public List<GameObject> groundPrefabs; // List of ground prefabs
+    public List<GameObject> groundPrefabs;
     public float angleBetweenGrounds = 20f;
     public float deletionOffsetMultiplier = 2f;
     public float movementSpeed = 5f;
@@ -12,41 +13,54 @@ public class ProceduralGeneration : MonoBehaviour
     [SerializeField]
     private Vector3 initialPosition;
 
+    private ProceduralGenerationManager manager;
     private List<Transform> groundTransforms = new List<Transform>();
+    private bool canMoveGround = true;
 
     private void Start()
     {
-        // Initial instantiation of ground pieces
         InstantiateGround(groundPrefab, initialPosition, Quaternion.Euler(-15f, 0f, 0f));
+        manager = FindObjectOfType<ProceduralGenerationManager>();
     }
 
     private void Update()
     {
-        MoveGround();
-        DeleteGround();
+        if (canMoveGround)
+        {
+            MoveGround();
+            DeleteGround();
+        }
+    }
+
+    // Call this method when you want to stop the ground movement (e.g., when the mini-game starts)
+    public void StopGroundMovement()
+    {
+        canMoveGround = false;
+    }
+
+    // Call this method when you want to resume the ground movement (e.g., when the mini-game ends)
+    public void ResumeGroundMovement()
+    {
+        canMoveGround = true;
     }
 
     private void MoveGround()
     {
         foreach (Transform groundTransform in groundTransforms)
         {
-            // Move the ground along an angled path
             Vector3 targetPosition = groundTransform.position + CalculateMovementVector(groundTransform) * movementSpeed * Time.deltaTime;
             groundTransform.position = Vector3.MoveTowards(groundTransform.position, targetPosition, movementSpeed * Time.deltaTime);
         }
 
-        // Check if we need to instantiate more ground
         Transform lastGround = groundTransforms[groundTransforms.Count - 1];
         if (lastGround.position.z < CalculateDeletionOffset())
         {
-            // Instantiate a random ground prefab at the end of the previous ones with the fixed offset
             InstantiateGround(groundPrefabs[Random.Range(0, groundPrefabs.Count)], lastGround.position + fixedOffset, lastGround.rotation);
         }
     }
 
     private void DeleteGround()
     {
-        // Delete ground tiles that are out of view
         Transform firstGround = groundTransforms[0];
 
         if (firstGround.position.z < -CalculateDeletionOffset())
@@ -58,7 +72,6 @@ public class ProceduralGeneration : MonoBehaviour
 
     private void InstantiateGround(GameObject prefab, Vector3 position, Quaternion rotation)
     {
-        // Instantiate the new ground at the end of the previous one
         GameObject newGround = Instantiate(prefab, position, rotation, transform);
         groundTransforms.Add(newGround.transform);
     }
@@ -71,7 +84,7 @@ public class ProceduralGeneration : MonoBehaviour
 
     private float CalculateDeletionOffset()
     {
-        return CalculateGroundDistance(groundPrefabs[0]) * deletionOffsetMultiplier; // Assuming all prefabs have the same length
+        return CalculateGroundDistance(groundPrefabs[0]) * deletionOffsetMultiplier;
     }
 
     private float CalculateGroundDistance(GameObject groundPrefab)
