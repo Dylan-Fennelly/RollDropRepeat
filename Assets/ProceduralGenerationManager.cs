@@ -4,6 +4,7 @@ using UnityEngine;
 public class ProceduralGenerationManager : MonoBehaviour
 {
     public ProceduralGeneration[] proceduralGenerators;
+    
 
     private void Start()
     {
