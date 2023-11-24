@@ -48,7 +48,7 @@ public class ProceduralGeneration : MonoBehaviour
     {
         foreach (Transform groundTransform in groundTransforms)
         {
-            Vector3 targetPosition = groundTransform.position + CalculateMovementVector(groundTransform) * movementSpeed * Time.deltaTime;
+            Vector3 targetPosition = groundTransform.position + CalculateMovementVector(groundTransform) * (movementSpeed * Time.deltaTime);
             groundTransform.position = Vector3.MoveTowards(groundTransform.position, targetPosition, movementSpeed * Time.deltaTime);
         }
 
