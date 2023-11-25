@@ -1,4 +1,7 @@
 using DefaultNamespace;
+using Events.Base;
+using Events.GameEvents;
+using Sounds.Scripts;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
@@ -21,7 +24,10 @@ public abstract class QuickTimeEvent : MonoBehaviour
     
     [SerializeField]
     protected Camera cam;
-
+    
+    [SerializeField]
+    protected Audio_Data_Bundle audioData;
+    
     protected PlayerMovement playerMovement;
 
     private ProceduralGenerationManager manager;
@@ -68,6 +74,7 @@ public abstract class QuickTimeEvent : MonoBehaviour
     
     public virtual void StartQTE()
     {
+        audioData.audioEvent.Raise(audioData);
         IsRunning = true;
         IsFinished = false;
         if(playerMovement != null)
@@ -96,6 +103,7 @@ public abstract class QuickTimeEvent : MonoBehaviour
             manager.OnMiniGameEnd();
         }
         Time = UnityEngine.Time.time - Time;
+        audioData.resetSounds.Raise(new Empty());
         HandleOutcome(Time);
         Debug.Log(Time);
     }

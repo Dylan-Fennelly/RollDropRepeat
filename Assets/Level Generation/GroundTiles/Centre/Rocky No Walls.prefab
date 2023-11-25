@@ -314,6 +314,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: rocky_obstacle
       objectReference: {fileID: 0}
+    - target: {fileID: 2379093814352183637, guid: 04ae4b933e0e0d34eb340f1c9eb10f95,
+        type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 3048916694836370415, guid: 04ae4b933e0e0d34eb340f1c9eb10f95,
         type: 3}
       propertyPath: m_LocalPosition.x
