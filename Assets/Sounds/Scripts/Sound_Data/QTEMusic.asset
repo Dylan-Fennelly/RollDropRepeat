@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b67c189f54fff1f4d9204c6ca5f5ed6d, type: 3}
+  m_Name: QTEMusic
+  m_EditorClassIdentifier: 
+  audioEvent: {fileID: 11400000, guid: 66fb3531bc8ba3449946fae195ad9c6f, type: 2}
+  clip: {fileID: 8300000, guid: 811701c3d49b4ca4e8e3eef88f719b67, type: 3}
+  type: 0
