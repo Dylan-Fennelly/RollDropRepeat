@@ -74,7 +74,7 @@ public abstract class QuickTimeEvent : MonoBehaviour
     
     public virtual void StartQTE()
     {
-        audioData.audioEvent.Raise(audioData);
+        audioData.audioEvents.playSound.Raise(audioData);
         IsRunning = true;
         IsFinished = false;
         if(playerMovement != null)
@@ -103,7 +103,7 @@ public abstract class QuickTimeEvent : MonoBehaviour
             manager.OnMiniGameEnd();
         }
         Time = UnityEngine.Time.time - Time;
-        audioData.resetSounds.Raise(new Empty());
+        audioData.audioEvents.resetSound.Raise(new Empty());
         HandleOutcome(Time);
         Debug.Log(Time);
     }
