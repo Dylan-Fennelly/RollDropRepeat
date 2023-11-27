@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace DefaultNamespace
 {
@@ -11,7 +12,7 @@ namespace DefaultNamespace
         public Vector2 otherMovement;
         public Vector2 otherRange;
         public float markMargin;
-        public float movementRegenerateTime;
+        [FormerlySerializedAs("movementRegenerateTime")] public float randomizeMovementSpeedTime;
         public float movementTick;
     }
 }

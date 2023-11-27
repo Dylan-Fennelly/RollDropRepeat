@@ -27,7 +27,7 @@ namespace DefaultNamespace
         
         private void RegenerateMovement()
         {
-            if (TimeElapsed > data.movementRegenerateTime)
+            if (TimeElapsed > data.randomizeMovementSpeedTime)
             {
                 TimeElapsed = 0;
                 OtherSpeed = Random.Range(data.otherMovement.x, data.otherMovement.y);
