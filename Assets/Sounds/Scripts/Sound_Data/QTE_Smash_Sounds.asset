@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c23adfbee3b408ea530d544bd2df47c, type: 3}
+  m_Name: QTE_Smash_Sounds
+  m_EditorClassIdentifier: 
+  audioEvent: {fileID: 0}
+  MusicData: {fileID: 0}
+  SFXData: {fileID: 0}
+  UIData: {fileID: 0}
