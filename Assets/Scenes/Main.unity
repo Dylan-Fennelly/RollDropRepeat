@@ -314,6 +314,7 @@ MonoBehaviour:
   rockSlider: {fileID: 408157533}
   cam: {fileID: 804405168}
   audioData: {fileID: 11400000, guid: 21119f5b90aaefd44bbb2503cb067bfc, type: 2}
+  qteFinished: {fileID: 11400000, guid: cb69b6df595532944bd4985f3ae1e62c, type: 2}
   markSlider: {fileID: 560247763}
 --- !u!1 &222352185
 GameObject:
@@ -849,6 +850,7 @@ MonoBehaviour:
   rockSlider: {fileID: 1131942515}
   cam: {fileID: 1933948479}
   audioData: {fileID: 11400000, guid: 21119f5b90aaefd44bbb2503cb067bfc, type: 2}
+  qteFinished: {fileID: 11400000, guid: cb69b6df595532944bd4985f3ae1e62c, type: 2}
   markSlider: {fileID: 0}
 --- !u!1 &360617556
 GameObject:
@@ -1646,7 +1648,7 @@ Transform:
   m_GameObject: {fileID: 577378009}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.1535425, y: -9.613763, z: -16.891388}
+  m_LocalPosition: {x: -8.14, y: -9.613763, z: -16.891388}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2763,6 +2765,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1336074368}
+        m_TargetAssemblyTypeName: ProceduralGenerationManager, Assembly-CSharp
+        m_MethodName: OnMiniGameStart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1179382112
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3472,6 +3486,18 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1520342521 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5192792507126574125, guid: 5ae94789542be054190a8b8907ca1d3e,
+    type: 3}
+  m_PrefabInstance: {fileID: 5841757473472365431}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c2156d3e5ca0774086de1c0cbe96d6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1596616285
 GameObject:
   m_ObjectHideFlags: 0
@@ -3712,6 +3738,7 @@ MonoBehaviour:
   rockSlider: {fileID: 1826177568}
   cam: {fileID: 134876154}
   audioData: {fileID: 11400000, guid: 21119f5b90aaefd44bbb2503cb067bfc, type: 2}
+  qteFinished: {fileID: 11400000, guid: cb69b6df595532944bd4985f3ae1e62c, type: 2}
 --- !u!1 &1663213564
 GameObject:
   m_ObjectHideFlags: 0
@@ -4231,6 +4258,7 @@ MonoBehaviour:
   rockSlider: {fileID: 1317258472}
   cam: {fileID: 395907315}
   audioData: {fileID: 11400000, guid: 21119f5b90aaefd44bbb2503cb067bfc, type: 2}
+  qteFinished: {fileID: 11400000, guid: cb69b6df595532944bd4985f3ae1e62c, type: 2}
 --- !u!1 &1926902001
 GameObject:
   m_ObjectHideFlags: 0
@@ -4515,6 +4543,7 @@ GameObject:
   - component: {fileID: 1955778288}
   - component: {fileID: 1955778287}
   - component: {fileID: 1955778286}
+  - component: {fileID: 1955778292}
   m_Layer: 0
   m_Name: QTE_Manager
   m_TagString: Untagged
@@ -4542,6 +4571,30 @@ MonoBehaviour:
       - m_Target: {fileID: 2089623925}
         m_TargetAssemblyTypeName: DefaultNamespace.QT_Timming, Assembly-CSharp
         m_MethodName: StartQTE
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1336074368}
+        m_TargetAssemblyTypeName: ProceduralGenerationManager, Assembly-CSharp
+        m_MethodName: OnMiniGameStart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1520342521}
+        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
+        m_MethodName: StopMovement
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4580,6 +4633,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1336074368}
+        m_TargetAssemblyTypeName: ProceduralGenerationManager, Assembly-CSharp
+        m_MethodName: OnMiniGameStart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1520342521}
+        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
+        m_MethodName: StopMovement
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1955778288
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4600,6 +4677,30 @@ MonoBehaviour:
       - m_Target: {fileID: 351363996}
         m_TargetAssemblyTypeName: DefaultNamespace.QT_Balance, Assembly-CSharp
         m_MethodName: StartQTE
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1336074368}
+        m_TargetAssemblyTypeName: ProceduralGenerationManager, Assembly-CSharp
+        m_MethodName: OnMiniGameStart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1520342521}
+        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
+        m_MethodName: StopMovement
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4638,6 +4739,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1336074368}
+        m_TargetAssemblyTypeName: ProceduralGenerationManager, Assembly-CSharp
+        m_MethodName: OnMiniGameStart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1520342521}
+        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
+        m_MethodName: StopMovement
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1955778290
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4667,6 +4792,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1336074368}
+        m_TargetAssemblyTypeName: ProceduralGenerationManager, Assembly-CSharp
+        m_MethodName: OnMiniGameStart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1520342521}
+        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
+        m_MethodName: StopMovement
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &1955778291
 Transform:
   m_ObjectHideFlags: 0
@@ -4682,6 +4831,47 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1955778292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1955778285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb882377772e47ddab8e69f4c8a3c8e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  description: On game finished
+  Event: {fileID: 11400000, guid: cb69b6df595532944bd4985f3ae1e62c, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1336074368}
+        m_TargetAssemblyTypeName: ProceduralGenerationManager, Assembly-CSharp
+        m_MethodName: OnMiniGameEnd
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1520342521}
+        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
+        m_MethodName: ResumeMovement
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1991946191
 GameObject:
   m_ObjectHideFlags: 0
@@ -4826,6 +5016,7 @@ MonoBehaviour:
   rockSlider: {fileID: 730559589}
   cam: {fileID: 914593014}
   audioData: {fileID: 11400000, guid: 21119f5b90aaefd44bbb2503cb067bfc, type: 2}
+  qteFinished: {fileID: 11400000, guid: cb69b6df595532944bd4985f3ae1e62c, type: 2}
   markSlider: {fileID: 1501759955}
 --- !u!1 &2108034384
 GameObject:
