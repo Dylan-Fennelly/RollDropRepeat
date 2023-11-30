@@ -42,14 +42,14 @@ public class AudioManager : MonoBehaviour
     
     private void PlayMusic(Audio_Data data)
     {
-        musicSource.clip = data.clip;
+        musicSource.clip = data.clip[0];
         musicSource.volume = 1f;
         musicSource.Play();
     }
     
     private void PlaySFX(Audio_Data data)
     {
-        sfxSource.clip = data.clip;
+        sfxSource.clip = data.clip[0];
         sfxSource.Play();
     }
     
@@ -60,18 +60,18 @@ public class AudioManager : MonoBehaviour
     
     private void PlayUI(Audio_Data data)
     {
-        uiSource.clip = data.clip;
+        uiSource.clip = data.clip[0];
         uiSource.Play();
     }
     
     public void PlayBasedSounds()
     {
-        musicSource.clip = audioDataBundle.MusicData.clip;
+        musicSource.clip = audioDataBundle.MusicData.clip[0];
         musicSource.loop = true;
         musicSource.volume = 0.3f;
         musicSource.Play();
         
-        sfxSource.clip = audioDataBundle.SFXData.clip;
+        sfxSource.clip = audioDataBundle.SFXData.clip[0];
         sfxSource.loop = true;
         sfxSource.Play();
     }
