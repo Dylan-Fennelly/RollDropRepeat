@@ -15,8 +15,8 @@ public abstract class QuickTimeEvent : MonoBehaviour
     
     [SerializeField]
     protected bool IsRunning = false;
-    protected bool IsFinished = false;
-    protected float Time;
+    private bool IsFinished = false;
+    private float Time;
     
     protected float RockPosition = 0;
     [SerializeField]
@@ -54,7 +54,7 @@ public abstract class QuickTimeEvent : MonoBehaviour
         rockSlider.value = RockPosition;
     }
     
-    protected void CheckFinish()
+    private void CheckFinish()
     {
         if (Progress == data.goal && !IsFinished)
         {
@@ -64,7 +64,7 @@ public abstract class QuickTimeEvent : MonoBehaviour
     
     public virtual void StartQTE()
     {
-        audioData.audioEvents.playSound.Raise(audioData);
+        audioData.audioEvents.playSound.Raise(audioData.MusicData);
         IsRunning = true;
         IsFinished = false;
         Progress = 0;
@@ -72,7 +72,7 @@ public abstract class QuickTimeEvent : MonoBehaviour
         cam.enabled = true;
     }
 
-    protected void Finish()
+    private void Finish()
     {
         IsFinished = true;
         IsRunning = false;
@@ -83,7 +83,7 @@ public abstract class QuickTimeEvent : MonoBehaviour
         Debug.Log(Time);
     }
 
-    protected void HandleOutcome(float time)
+    private void HandleOutcome(float time)
     {
         if (Time < data.averageTime.x)
         {
@@ -98,5 +98,10 @@ public abstract class QuickTimeEvent : MonoBehaviour
             //Average outcome
         }
         cam.enabled = false;
+    }
+    
+    protected void playUISound()
+    {
+        audioData.audioEvents.playSound.Raise(audioData.UIData);
     }
 }

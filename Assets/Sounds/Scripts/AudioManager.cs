@@ -19,38 +19,62 @@ public class AudioManager : MonoBehaviour
     {
         PlayBasedSounds();
     }
-    
-    public void Play(Audio_Data_Bundle data)
+
+    public void Play(Audio_Data data)
     {
-        if (data.MusicData)
+        switch (data.type)
         {
-            PlayMusic(data.MusicData);
-        }
-        if (data.SFXData)
-        {
-            PlaySFX(data.SFXData);
-        }
-        else
-        {
-            StopSFX();
-        }
-        if (data.UIData)
-        {
-            PlayUI(data.UIData);
+            case SourceAudioType.Music:
+                PlayMusic(data);
+                break;
+            case SourceAudioType.SFX:
+                PlaySFX(data);
+                break;
+            case SourceAudioType.UI:
+                PlayUI(data);
+                break;
         }
     }
     
     private void PlayMusic(Audio_Data data)
     {
-        musicSource.clip = data.clip;
-        musicSource.volume = 1f;
-        musicSource.Play();
+        if (data.clip == null)
+        {
+            StopMusic();
+        }
+        else
+        {
+            musicSource.clip = data.clip;
+            musicSource.volume = 1f;
+            musicSource.Play();
+        }
     }
     
     private void PlaySFX(Audio_Data data)
     {
-        sfxSource.clip = data.clip;
-        sfxSource.Play();
+        if (data.clip == null)
+        {
+            StopSFX();
+        }
+        else
+        {
+            sfxSource.clip = data.clip;
+            sfxSource.Play();
+        }
+        
+    }
+    
+    private void PlayUI(Audio_Data data)
+    {
+        if (data.clip == null)
+        {
+            StopUI();
+        }
+        else
+        {
+            uiSource.clip = data.clip;
+            uiSource.Play();
+        }
     }
     
     private void StopSFX()
@@ -58,11 +82,17 @@ public class AudioManager : MonoBehaviour
         sfxSource.Stop();
     }
     
-    private void PlayUI(Audio_Data data)
+    private void StopMusic()
     {
-        uiSource.clip = data.clip;
-        uiSource.Play();
+        musicSource.Stop();
     }
+    
+    private void StopUI()
+    {
+        uiSource.Stop();
+    }
+    
+    
     
     public void PlayBasedSounds()
     {
