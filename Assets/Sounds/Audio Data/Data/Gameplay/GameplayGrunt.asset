@@ -12,5 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b67c189f54fff1f4d9204c6ca5f5ed6d, type: 3}
   m_Name: GameplayGrunt
   m_EditorClassIdentifier: 
-  clip: {fileID: 0}
-  type: 0
+  clip:
+  - {fileID: 8300000, guid: 36af8c17c1dd62944b92caf21a4b64c1, type: 3}
+  - {fileID: 8300000, guid: 702795a3814cfbc4481f855cd4616120, type: 3}
+  - {fileID: 8300000, guid: 524a531b5e7b0a44699bb8556583a061, type: 3}
+  - {fileID: 8300000, guid: 47b6fa0d16edd8e40b71c12d882b2cb9, type: 3}
+  - {fileID: 8300000, guid: 89a7b8d1e5c8d4a478052ef260b36bae, type: 3}
+  - {fileID: 8300000, guid: 86db25c969fadea46979cf06f83d1f49, type: 3}
+  - {fileID: 8300000, guid: ca7fe44387610ed4a94b4922c6ae542a, type: 3}
+  - {fileID: 8300000, guid: 1f4f15de1d897e24c937fe61695e31d2, type: 3}
+  type: 1
+  shouldOverride: 0
