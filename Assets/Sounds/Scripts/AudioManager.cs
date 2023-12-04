@@ -49,7 +49,7 @@ public class AudioManager : MonoBehaviour
     
     private void PlaySFX(Audio_Data data)
     {
-        if (shouldOverride)
+        if (data.shouldOverride)
         {
             StopSFX();
         }
