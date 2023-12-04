@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b67c189f54fff1f4d9204c6ca5f5ed6d, type: 3}
   m_Name: RockCatch
   m_EditorClassIdentifier: 
-  clip: []
+  clip:
+  - {fileID: 8300000, guid: dcaac30d9347e9b46b741d826512237d, type: 3}
   type: 2
   shouldOverride: 0

@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: MuffledRoll
   m_EditorClassIdentifier: 
   clip:
-  - {fileID: 0}
+  - {fileID: 8300000, guid: d9c949918e3151546a00b16029d63795, type: 3}
   type: 1
   shouldOverride: 0

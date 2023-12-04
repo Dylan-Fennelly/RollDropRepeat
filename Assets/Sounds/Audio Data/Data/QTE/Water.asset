@@ -12,5 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b67c189f54fff1f4d9204c6ca5f5ed6d, type: 3}
   m_Name: Water
   m_EditorClassIdentifier: 
-  clip: {fileID: 8300000, guid: b5ca755a83fc15b4b8c3ab1cfcc24315, type: 3}
+  clip:
+  - {fileID: 8300000, guid: b5ca755a83fc15b4b8c3ab1cfcc24315, type: 3}
   type: 1
+  shouldOverride: 0
