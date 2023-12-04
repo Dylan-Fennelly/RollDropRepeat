@@ -38,43 +38,37 @@ public class AudioManager : MonoBehaviour
     
     private void PlayMusic(Audio_Data data)
     {
-        if (data.clip == null)
+        if (data.shouldOverride)
         {
             StopMusic();
         }
-        else
-        {
-            musicSource.clip = data.clip;
-            musicSource.volume = 1f;
-            musicSource.Play();
-        }
+        musicSource.clip = data.clip[0];
+        musicSource.volume = data.volume;
+        musicSource.Play();
     }
     
     private void PlaySFX(Audio_Data data)
     {
-        if (data.clip == null)
+        if (shouldOverride)
         {
             StopSFX();
         }
-        else
-        {
-            sfxSource.clip = data.clip;
-            sfxSource.Play();
-        }
-        
+       
+        sfxSource.clip = data.clip[0];
+        sfxSource.volume = data.volume;
+        sfxSource.Play();
     }
     
     private void PlayUI(Audio_Data data)
     {
-        if (data.clip == null)
+        if (data.shouldOverride)
         {
             StopUI();
         }
-        else
-        {
-            uiSource.clip = data.clip;
-            uiSource.Play();
-        }
+        
+        uiSource.clip = data.clip[0];
+        uiSource.volume = data.volume;
+        uiSource.Play();
     }
     
     private void StopSFX()
@@ -96,12 +90,12 @@ public class AudioManager : MonoBehaviour
     
     public void PlayBasedSounds()
     {
-        musicSource.clip = audioDataBundle.MusicData.clip;
+        musicSource.clip = audioDataBundle.MusicData.clip[0];
         musicSource.loop = true;
-        musicSource.volume = 0.3f;
+        musicSource.volume = audioDataBundle.MusicData.volume;
         musicSource.Play();
         
-        sfxSource.clip = audioDataBundle.SFXData.clip;
+        sfxSource.clip = audioDataBundle.SFXData.clip[0];
         sfxSource.loop = true;
         sfxSource.Play();
     }

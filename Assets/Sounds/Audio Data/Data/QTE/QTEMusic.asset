@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b67c189f54fff1f4d9204c6ca5f5ed6d, type: 3}
   m_Name: QTEMusic
   m_EditorClassIdentifier: 
-  audioEvent: {fileID: 11400000, guid: 66fb3531bc8ba3449946fae195ad9c6f, type: 2}
-  clip: {fileID: 8300000, guid: 811701c3d49b4ca4e8e3eef88f719b67, type: 3}
+  clip:
+  - {fileID: 8300000, guid: 2ef92c49ab3192d4e971fdda5ca1e0a7, type: 3}
   type: 0
+  shouldOverride: 0

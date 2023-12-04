@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c23adfbee3b408ea530d544bd2df47c, type: 3}
+  m_Name: QTETimingSoundBundle
+  m_EditorClassIdentifier: 
+  audioEvents: {fileID: 11400000, guid: 5d8a3d4b6934fa84fb2f2b0ca01b6f04, type: 2}
+  MusicData: {fileID: 11400000, guid: e7e8f1b8bc5b75e4cb46c4c1b9366a45, type: 2}
+  SFXData: {fileID: 11400000, guid: 30bf3256015cfe94aad903a60c4c6743, type: 2}
+  UIData: {fileID: 11400000, guid: a2ae53b9b5f159f4cb82d371d5aa1b08, type: 2}
