@@ -9,4 +9,5 @@ public class Audio_Data : ScriptableObject
     public List<AudioClip> clip;
     [EnumPaging] public SourceAudioType type;
     public bool shouldOverride = false;
+    public float volume = 1f;
 }
