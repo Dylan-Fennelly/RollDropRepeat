@@ -78,6 +78,7 @@ namespace DefaultNamespace
             if (RockPosition <= MarkPosition + data.markMargin && RockPosition >= MarkPosition - data.markMargin)
             {
                 Progress++;
+                playUISound();
                 return true;
             }
 

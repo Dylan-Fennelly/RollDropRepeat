@@ -15,8 +15,8 @@ public abstract class QuickTimeEvent : MonoBehaviour
     
     [SerializeField]
     protected bool IsRunning = false;
-    protected bool IsFinished = false;
-    protected float Time;
+    private bool IsFinished = false;
+    private float Time;
     
     protected float RockPosition = 0;
     [SerializeField]
@@ -28,24 +28,14 @@ public abstract class QuickTimeEvent : MonoBehaviour
     [SerializeField]
     protected Audio_Data_Bundle audioData;
     
-    protected PlayerMovement playerMovement;
-
-    private ProceduralGenerationManager manager;
+    [SerializeField]
+    private EmptyGameEvent qteFinished;
 
     // Update is called once per frame
     void Awake()
     {
-        playerMovement = FindObjectOfType<PlayerMovement>();
-        if(playerMovement == null)
-        {
-            Debug.LogError("No player movement found");
-        }
-        manager = FindObjectOfType<ProceduralGenerationManager>();
-        if(manager == null)
-        {
-            Debug.LogError("No procedural generation manager found");
-        }
-    }   
+    }
+    
     void Update()
     {
         if (IsRunning)
@@ -64,7 +54,7 @@ public abstract class QuickTimeEvent : MonoBehaviour
         rockSlider.value = RockPosition;
     }
     
-    protected void CheckFinish()
+    private void CheckFinish()
     {
         if (Progress == data.goal && !IsFinished)
         {
@@ -74,41 +64,26 @@ public abstract class QuickTimeEvent : MonoBehaviour
     
     public virtual void StartQTE()
     {
-        audioData.audioEvents.playSound.Raise(audioData);
+        audioData.audioEvents.playSound.Raise(audioData.MusicData);
         IsRunning = true;
         IsFinished = false;
-        if(playerMovement != null)
-        {
-            playerMovement.canMove = false;
-        }
-        if (manager != null)
-        {
-            manager.OnMiniGameStart();
-        }
         Progress = 0;
         Time = UnityEngine.Time.time;
         cam.enabled = true;
     }
 
-    protected void Finish()
+    private void Finish()
     {
         IsFinished = true;
         IsRunning = false;
-        if(playerMovement != null)
-        {
-            playerMovement.canMove = true;
-        }
-        if (manager != null)
-        {
-            manager.OnMiniGameEnd();
-        }
+        qteFinished.Raise(new Empty());
         Time = UnityEngine.Time.time - Time;
         audioData.audioEvents.resetSound.Raise(new Empty());
         HandleOutcome(Time);
         Debug.Log(Time);
     }
 
-    protected void HandleOutcome(float time)
+    private void HandleOutcome(float time)
     {
         if (Time < data.averageTime.x)
         {
@@ -123,5 +98,10 @@ public abstract class QuickTimeEvent : MonoBehaviour
             //Average outcome
         }
         cam.enabled = false;
+    }
+    
+    protected void playUISound()
+    {
+        audioData.audioEvents.playSound.Raise(audioData.UIData);
     }
 }

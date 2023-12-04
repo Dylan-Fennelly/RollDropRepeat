@@ -94,4 +94,14 @@ public class PlayerMovement : MonoBehaviour
         isCollidingWithWall = false;
         isMoving = false; // Reset the isMoving flag after snapping back
     }
+    
+    public void StopMovement()
+    {
+        canMove = false;
+    }
+    
+    public void ResumeMovement()
+    {
+        canMove = true;
+    }
 }

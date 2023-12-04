@@ -19,29 +19,29 @@ public class AudioManager : MonoBehaviour
     {
         PlayBasedSounds();
     }
-    
-    public void Play(Audio_Data_Bundle data)
+
+    public void Play(Audio_Data data)
     {
-        if (data.MusicData)
+        switch (data.type)
         {
-            PlayMusic(data.MusicData);
-        }
-        if (data.SFXData)
-        {
-            PlaySFX(data.SFXData);
-        }
-        else
-        {
-            StopSFX();
-        }
-        if (data.UIData)
-        {
-            PlayUI(data.UIData);
+            case SourceAudioType.Music:
+                PlayMusic(data);
+                break;
+            case SourceAudioType.SFX:
+                PlaySFX(data);
+                break;
+            case SourceAudioType.UI:
+                PlayUI(data);
+                break;
         }
     }
     
     private void PlayMusic(Audio_Data data)
     {
+        if (data.shouldOverride)
+        {
+            StopMusic();
+        }
         musicSource.clip = data.clip[0];
         musicSource.volume = data.volume;
         musicSource.Play();
@@ -49,9 +49,26 @@ public class AudioManager : MonoBehaviour
     
     private void PlaySFX(Audio_Data data)
     {
+        if (shouldOverride)
+        {
+            StopSFX();
+        }
+       
         sfxSource.clip = data.clip[0];
         sfxSource.volume = data.volume;
         sfxSource.Play();
+    }
+    
+    private void PlayUI(Audio_Data data)
+    {
+        if (data.shouldOverride)
+        {
+            StopUI();
+        }
+        
+        uiSource.clip = data.clip[0];
+        uiSource.volume = data.volume;
+        uiSource.Play();
     }
     
     private void StopSFX()
@@ -59,12 +76,17 @@ public class AudioManager : MonoBehaviour
         sfxSource.Stop();
     }
     
-    private void PlayUI(Audio_Data data)
+    private void StopMusic()
     {
-        uiSource.clip = data.clip[0];
-        uiSource.volume = data.volume;
-        uiSource.Play();
+        musicSource.Stop();
     }
+    
+    private void StopUI()
+    {
+        uiSource.Stop();
+    }
+    
+    
     
     public void PlayBasedSounds()
     {
