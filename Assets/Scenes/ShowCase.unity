@@ -2198,6 +2198,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eventToStart: {fileID: 11400000, guid: 3ee0aa969d4010340bcf21106fc4bafa, type: 2}
+--- !u!1 &271939187 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7793044016704561735, guid: c83691338d142f94787c7bfe6004a38c,
+    type: 3}
+  m_PrefabInstance: {fileID: 7931490762038732899}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &271939191
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 271939187}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 36078ab0369161e49a29d349ae3e0739, type: 3}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!95 &275044157
 Animator:
   serializedVersion: 5
@@ -17994,7 +18021,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7793044016704561735, guid: c83691338d142f94787c7bfe6004a38c,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 271939191}
   m_SourcePrefab: {fileID: 100100000, guid: c83691338d142f94787c7bfe6004a38c, type: 3}
 --- !u!82 &7952231891620976175
 AudioSource:
