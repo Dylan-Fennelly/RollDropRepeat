@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioEvents: {fileID: 11400000, guid: 5d8a3d4b6934fa84fb2f2b0ca01b6f04, type: 2}
   MusicData: {fileID: 11400000, guid: e7e8f1b8bc5b75e4cb46c4c1b9366a45, type: 2}
-  SFXData: {fileID: 11400000, guid: 987753e98eb8d9640910e54e8aba73bb, type: 2}
-  UIData: {fileID: 11400000, guid: ee5cd9d442a4d874b86b56c323ec07b6, type: 2}
+  SFXData: {fileID: 11400000, guid: 726fbcc53c6b10049bea9206f0660d00, type: 2}
+  UIData: {fileID: 11400000, guid: 64eef6d8506e2ab4f9663a29cf613a5f, type: 2}

@@ -9,6 +9,13 @@ public class AudioManager : MonoBehaviour
     private AudioSource musicSource;
     [SerializeField]
     private AudioSource sfxSource;
+
+    [SerializeField]
+    private AudioSource sissySource;
+    
+    [SerializeField]
+    private AudioSource rockSource;
+    
     [SerializeField]
     private AudioSource uiSource;
     
@@ -17,6 +24,31 @@ public class AudioManager : MonoBehaviour
     
     private void Awake()
     {
+        if (musicSource == null)
+        {
+           musicSource = GameObject.Find("MusicSource").GetComponent<AudioSource>();
+        }
+        
+        if (sfxSource == null)
+        {
+            sfxSource = GameObject.Find("SFXSource").GetComponent<AudioSource>();
+        }
+        
+        if (sissySource == null)
+        {
+            sissySource = GameObject.Find("SissySource").GetComponent<AudioSource>();
+        }
+        
+        if (rockSource == null)
+        {
+            rockSource = GameObject.Find("RockSource").GetComponent<AudioSource>();
+        }
+        
+        if (uiSource == null)
+        {
+            uiSource = GameObject.Find("UISource").GetComponent<AudioSource>();
+        }
+        
         PlayBasedSounds();
     }
 
@@ -32,6 +64,12 @@ public class AudioManager : MonoBehaviour
                 break;
             case SourceAudioType.UI:
                 PlayUI(data);
+                break;
+            case SourceAudioType.Sissy:
+                PlaySissy(data);
+                break;
+            case SourceAudioType.Rock:
+                PlayRock(data);
                 break;
         }
     }
@@ -69,6 +107,40 @@ public class AudioManager : MonoBehaviour
         uiSource.clip = data.clip[0];
         uiSource.volume = data.volume;
         uiSource.Play();
+    }
+    
+    private void PlaySissy(Audio_Data data)
+    {
+        if (data.shouldOverride)
+        {
+            StopSissy();
+        }
+        
+        sissySource.clip = data.clip[0];
+        sissySource.volume = data.volume;
+        sissySource.Play();
+    }
+    
+    private void PlayRock(Audio_Data data)
+    {
+        if (data.shouldOverride)
+        {
+            StopRock();
+        }
+        
+        rockSource.clip = data.clip[0];
+        rockSource.volume = data.volume;
+        rockSource.Play();
+    }
+    
+    private void StopSissy()
+    {
+        sissySource.Stop();
+    }
+    
+    private void StopRock()
+    {
+        rockSource.Stop();
     }
     
     private void StopSFX()
