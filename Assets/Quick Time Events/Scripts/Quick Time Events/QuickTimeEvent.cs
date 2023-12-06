@@ -43,6 +43,7 @@ public abstract class QuickTimeEvent : MonoBehaviour
             HandleInput();
             HandleMovement();
             CheckFinish();
+            playSfxSounds();
         }
     }
 
@@ -103,5 +104,12 @@ public abstract class QuickTimeEvent : MonoBehaviour
     protected void playUISound()
     {
         audioData.audioEvents.playSound.Raise(audioData.UIData);
+    }
+    
+    private void playSfxSounds()
+    {
+        audioData.audioEvents.playSound.Raise(audioData.SFXData);
+        audioData.audioEvents.playSound.Raise(audioData.RockData);
+        audioData.audioEvents.playSound.Raise(audioData.SissyData);
     }
 }
