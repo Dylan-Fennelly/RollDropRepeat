@@ -4,6 +4,8 @@
     {
         Music,
         SFX,
+        Sissy,
+        Rock,
         UI,
         BackgroundMusic
     }

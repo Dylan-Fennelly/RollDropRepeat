@@ -123,6 +123,12 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!82 &26282582 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 9115436279967697307, guid: 5ae94789542be054190a8b8907ca1d3e,
+    type: 3}
+  m_PrefabInstance: {fileID: 5841757473472365431}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &58932872 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7929591342213996957, guid: 5ae94789542be054190a8b8907ca1d3e,
@@ -313,7 +319,7 @@ MonoBehaviour:
   IsRunning: 0
   rockSlider: {fileID: 408157533}
   cam: {fileID: 804405168}
-  audioData: {fileID: 11400000, guid: 21119f5b90aaefd44bbb2503cb067bfc, type: 2}
+  audioData: {fileID: 11400000, guid: 42313bf68461b294d87f59b59854f00a, type: 2}
   qteFinished: {fileID: 11400000, guid: cb69b6df595532944bd4985f3ae1e62c, type: 2}
   markSlider: {fileID: 560247763}
 --- !u!1 &222352185
@@ -849,7 +855,7 @@ MonoBehaviour:
   IsRunning: 0
   rockSlider: {fileID: 1131942515}
   cam: {fileID: 1933948479}
-  audioData: {fileID: 11400000, guid: 21119f5b90aaefd44bbb2503cb067bfc, type: 2}
+  audioData: {fileID: 11400000, guid: bf11cceac93c39b4aa9c9aa643b1f7d6, type: 2}
   qteFinished: {fileID: 11400000, guid: cb69b6df595532944bd4985f3ae1e62c, type: 2}
   markSlider: {fileID: 0}
 --- !u!1 &360617556
@@ -909,7 +915,7 @@ MonoBehaviour:
   m_BlockingObjects: 0
   m_BlockingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 55
 --- !u!114 &360617559
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -956,6 +962,12 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!82 &384067961 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 6338181140277078280, guid: 5ae94789542be054190a8b8907ca1d3e,
+    type: 3}
+  m_PrefabInstance: {fileID: 5841757473472365431}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &395907311
 GameObject:
   m_ObjectHideFlags: 0
@@ -3635,6 +3647,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicSource: {fileID: 1636786066}
   sfxSource: {fileID: 200538949}
+  sissySource: {fileID: 26282582}
+  rockSource: {fileID: 384067961}
   uiSource: {fileID: 1213422285}
   audioDataBundle: {fileID: 11400000, guid: 7bc07b6e1ba847a4cad3a08dce999fbb, type: 2}
 --- !u!4 &1609495447
@@ -3737,7 +3751,7 @@ MonoBehaviour:
   IsRunning: 0
   rockSlider: {fileID: 1826177568}
   cam: {fileID: 134876154}
-  audioData: {fileID: 11400000, guid: 21119f5b90aaefd44bbb2503cb067bfc, type: 2}
+  audioData: {fileID: 11400000, guid: 8cb19dda713ce1b42bebc35f3b21650e, type: 2}
   qteFinished: {fileID: 11400000, guid: cb69b6df595532944bd4985f3ae1e62c, type: 2}
 --- !u!1 &1663213564
 GameObject:
@@ -5015,7 +5029,7 @@ MonoBehaviour:
   IsRunning: 0
   rockSlider: {fileID: 730559589}
   cam: {fileID: 914593014}
-  audioData: {fileID: 11400000, guid: 21119f5b90aaefd44bbb2503cb067bfc, type: 2}
+  audioData: {fileID: 11400000, guid: f78c82b425808cf4c8285cb7a3463853, type: 2}
   qteFinished: {fileID: 11400000, guid: cb69b6df595532944bd4985f3ae1e62c, type: 2}
   markSlider: {fileID: 1501759955}
 --- !u!1 &2108034384

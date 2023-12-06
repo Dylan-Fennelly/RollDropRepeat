@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clip:
   - {fileID: 8300000, guid: f3291e01570d0e948a3a797631409845, type: 3}
-  type: 2
+  type: 4
   shouldOverride: 0
+  volume: 1
