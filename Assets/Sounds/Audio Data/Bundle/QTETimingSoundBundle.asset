@@ -15,4 +15,6 @@ MonoBehaviour:
   audioEvents: {fileID: 11400000, guid: 5d8a3d4b6934fa84fb2f2b0ca01b6f04, type: 2}
   MusicData: {fileID: 11400000, guid: e7e8f1b8bc5b75e4cb46c4c1b9366a45, type: 2}
   SFXData: {fileID: 11400000, guid: 30bf3256015cfe94aad903a60c4c6743, type: 2}
-  UIData: {fileID: 11400000, guid: a2ae53b9b5f159f4cb82d371d5aa1b08, type: 2}
+  SissyData: {fileID: 11400000, guid: ff2cb9436d9bd40489ecaadc3be6fd34, type: 2}
+  RockData: {fileID: 11400000, guid: a2ae53b9b5f159f4cb82d371d5aa1b08, type: 2}
+  UIData: {fileID: 11400000, guid: ee5cd9d442a4d874b86b56c323ec07b6, type: 2}
