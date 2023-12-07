@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Sounds.Scripts;
 using UnityEngine;
 
@@ -72,6 +73,8 @@ public class AudioManager : MonoBehaviour
                 PlayRock(data);
                 break;
         }
+        
+        uiSource.loop = false;
     }
     
     private void PlayMusic(Audio_Data data)
@@ -80,9 +83,14 @@ public class AudioManager : MonoBehaviour
         {
             StopMusic();
         }
-        musicSource.clip = data.clip[0];
-        musicSource.volume = data.volume;
-        musicSource.Play();
+
+        if (!musicSource.isPlaying)
+        {
+            musicSource.clip = data.clip.Count > 1 ? data.clip[Random.Range(0, data.clip.Count)] : data.clip[0];
+        
+            musicSource.volume = data.volume;
+            musicSource.Play();
+        }
     }
     
     private void PlaySFX(Audio_Data data)
@@ -91,8 +99,9 @@ public class AudioManager : MonoBehaviour
         {
             StopSFX();
         }
-       
-        sfxSource.clip = data.clip[0];
+
+        sfxSource.clip = data.clip.Count > 1 ? data.clip[Random.Range(0, data.clip.Count)] : data.clip[0];
+        
         sfxSource.volume = data.volume;
         sfxSource.Play();
     }
@@ -103,10 +112,13 @@ public class AudioManager : MonoBehaviour
         {
             StopUI();
         }
-        
-        uiSource.clip = data.clip[0];
-        uiSource.volume = data.volume;
-        uiSource.Play();
+
+        if (uiSource.isPlaying != false)
+        {
+            uiSource.clip = data.clip.Count > 1 ? data.clip[Random.Range(0, data.clip.Count)] : data.clip[0];
+            uiSource.volume = data.volume;
+            uiSource.Play();
+        }
     }
     
     private void PlaySissy(Audio_Data data)
@@ -116,7 +128,7 @@ public class AudioManager : MonoBehaviour
             StopSissy();
         }
         
-        sissySource.clip = data.clip[0];
+        sissySource.clip = data.clip.Count > 1 ? data.clip[Random.Range(0, data.clip.Count)] : data.clip[0] ;
         sissySource.volume = data.volume;
         sissySource.Play();
     }
@@ -128,7 +140,7 @@ public class AudioManager : MonoBehaviour
             StopRock();
         }
         
-        rockSource.clip = data.clip[0];
+        rockSource.clip = data.clip.Count > 1 ? data.clip[Random.Range(0, data.clip.Count)] : data.clip[0];
         rockSource.volume = data.volume;
         rockSource.Play();
     }
@@ -158,18 +170,18 @@ public class AudioManager : MonoBehaviour
         uiSource.Stop();
     }
     
-    
-    
     public void PlayBasedSounds()
     {
-        musicSource.clip = audioDataBundle.MusicData.clip[0];
         musicSource.loop = true;
-        musicSource.volume = audioDataBundle.MusicData.volume;
-        musicSource.Play();
+        PlayMusic(audioDataBundle.MusicData);
+    
+        sissySource.loop = true;
+        PlaySissy(audioDataBundle.SissyData);
         
-        sfxSource.clip = audioDataBundle.SFXData.clip[0];
+        rockSource.loop = true;
+        PlayRock(audioDataBundle.RockData);
+        
         sfxSource.loop = true;
-        sfxSource.Play();
     }
     
 }

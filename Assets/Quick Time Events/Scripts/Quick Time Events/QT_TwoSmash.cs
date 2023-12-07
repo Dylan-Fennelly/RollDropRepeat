@@ -12,7 +12,7 @@ namespace DefaultNamespace
             if (Input.GetKeyUp(key[isA ? 0 : 1]))
             {
                 Progress++;
-                playUISound();
+                PlayUISound();
                 RockPosition = Progress / data.goal;
                 isA = !isA;
             }

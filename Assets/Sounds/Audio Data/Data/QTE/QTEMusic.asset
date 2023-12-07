@@ -15,4 +15,5 @@ MonoBehaviour:
   clip:
   - {fileID: 8300000, guid: 2ef92c49ab3192d4e971fdda5ca1e0a7, type: 3}
   type: 0
-  shouldOverride: 0
+  shouldOverride: 1
+  volume: 1

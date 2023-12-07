@@ -9,7 +9,7 @@ namespace DefaultNamespace
             if (Input.GetKeyUp(KeyCode.W))
             {
                 Progress++;
-                playUISound();
+                PlayUISound();
                 RockPosition = Progress / data.goal;
             }
         }

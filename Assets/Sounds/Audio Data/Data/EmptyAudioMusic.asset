@@ -12,5 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b67c189f54fff1f4d9204c6ca5f5ed6d, type: 3}
   m_Name: EmptyAudioMusic
   m_EditorClassIdentifier: 
-  clip: {fileID: 0}
+  clip:
+  - {fileID: 0}
   type: 0
+  shouldOverride: 1
+  volume: 1

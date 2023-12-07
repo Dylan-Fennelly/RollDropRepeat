@@ -15,4 +15,5 @@ MonoBehaviour:
   clip:
   - {fileID: 0}
   type: 1
-  shouldOverride: 0
+  shouldOverride: 1
+  volume: 1

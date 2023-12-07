@@ -43,7 +43,6 @@ public abstract class QuickTimeEvent : MonoBehaviour
             HandleInput();
             HandleMovement();
             CheckFinish();
-            playSfxSounds();
         }
     }
 
@@ -66,6 +65,7 @@ public abstract class QuickTimeEvent : MonoBehaviour
     public virtual void StartQTE()
     {
         audioData.audioEvents.playSound.Raise(audioData.MusicData);
+        PlaySfxSounds();
         IsRunning = true;
         IsFinished = false;
         Progress = 0;
@@ -101,12 +101,12 @@ public abstract class QuickTimeEvent : MonoBehaviour
         cam.enabled = false;
     }
     
-    protected void playUISound()
+    protected void PlayUISound()
     {
         audioData.audioEvents.playSound.Raise(audioData.UIData);
     }
     
-    private void playSfxSounds()
+    private void PlaySfxSounds()
     {
         audioData.audioEvents.playSound.Raise(audioData.SFXData);
         audioData.audioEvents.playSound.Raise(audioData.RockData);
