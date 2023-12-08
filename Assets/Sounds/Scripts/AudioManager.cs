@@ -3,9 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using Sounds.Scripts;
 using UnityEngine;
+using UnityEngine.Audio;
+using UnityEngine.UI;
 
 public class AudioManager : MonoBehaviour
 {
+    [SerializeField]
+    private AudioMixer audioMixer;
+    
     [SerializeField]
     private AudioSource musicSource;
     [SerializeField]
@@ -182,6 +187,12 @@ public class AudioManager : MonoBehaviour
         PlayRock(audioDataBundle.RockData);
         
         sfxSource.loop = true;
+    }
+    
+    public void setVolume(Slider volume)
+    {
+        float volumeValue = Mathf.Log10(volume.value) * 20;
+        audioMixer.SetFloat("MasterVolume", volumeValue);
     }
     
 }
