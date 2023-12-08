@@ -8,11 +8,12 @@ public class ProceduralGenerationManager : MonoBehaviour
 
     private void Start()
     {
+        OnMiniGameStart();
         // Ensure all procedural generators start moving
-        foreach (ProceduralGeneration generator in proceduralGenerators)
-        {
-            generator.ResumeGroundMovement();
-        }
+        // foreach (ProceduralGeneration generator in proceduralGenerators)
+        // {
+        //     generator.ResumeGroundMovement();
+        // }
     }
 
     // Call this method when the mini-game starts

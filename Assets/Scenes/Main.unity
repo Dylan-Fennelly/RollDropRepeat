@@ -519,7 +519,6 @@ GameObject:
   m_Component:
   - component: {fileID: 243355495}
   - component: {fileID: 243355498}
-  - component: {fileID: 243355497}
   - component: {fileID: 243355496}
   m_Layer: 0
   m_Name: Camera - Menu
@@ -587,14 +586,6 @@ MonoBehaviour:
     mipBias: 0
     varianceClampScale: 0.9
     contrastAdaptiveSharpening: 0
---- !u!81 &243355497
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 243355494}
-  m_Enabled: 1
 --- !u!20 &243355498
 Camera:
   m_ObjectHideFlags: 0
@@ -2669,6 +2660,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
         m_MethodName: set_enabled
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1336074368}
+        m_TargetAssemblyTypeName: ProceduralGenerationManager, Assembly-CSharp
+        m_MethodName: OnMiniGameEnd
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -5699,7 +5702,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.4650231, g: 0.5377358, b: 0.5193998, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -6025,7 +6028,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1577223714}
   - component: {fileID: 1577223717}
-  - component: {fileID: 1577223716}
   - component: {fileID: 1577223715}
   m_Layer: 0
   m_Name: Camera - UI
@@ -6093,14 +6095,6 @@ MonoBehaviour:
     mipBias: 0
     varianceClampScale: 0.9
     contrastAdaptiveSharpening: 0
---- !u!81 &1577223716
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1577223713}
-  m_Enabled: 1
 --- !u!20 &1577223717
 Camera:
   m_ObjectHideFlags: 0
@@ -6929,6 +6923,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 1336074368}
+        m_TargetAssemblyTypeName: ProceduralGenerationManager, Assembly-CSharp
+        m_MethodName: OnMiniGameEnd
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &1682793407
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7202,7 +7208,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1753265885}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -23}
   m_LocalScale: {x: 4.0583, y: 4.0583, z: 4.0583}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -8519,6 +8525,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1336074368}
+        m_TargetAssemblyTypeName: ProceduralGenerationManager, Assembly-CSharp
+        m_MethodName: OnMiniGameStart
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
