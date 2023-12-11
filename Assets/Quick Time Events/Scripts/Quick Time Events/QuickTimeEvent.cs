@@ -31,6 +31,8 @@ public abstract class QuickTimeEvent : MonoBehaviour
     [SerializeField]
     private EmptyGameEvent qteFinished;
 
+    [SerializeField] private Image progressBar;
+
     // Update is called once per frame
     void Awake()
     {
@@ -56,6 +58,7 @@ public abstract class QuickTimeEvent : MonoBehaviour
     
     private void CheckFinish()
     {
+        progressBar.fillAmount = (float)Progress / data.goal;
         if (Progress == data.goal && !IsFinished)
         {
             Finish();
