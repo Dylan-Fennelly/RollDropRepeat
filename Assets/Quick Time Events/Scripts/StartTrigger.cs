@@ -12,5 +12,6 @@ public class StartTrigger : MonoBehaviour
     public void StartEvent()
     {
         eventToStart.Raise(new Empty());
+        GameObject.Destroy(gameObject);
     }
 }

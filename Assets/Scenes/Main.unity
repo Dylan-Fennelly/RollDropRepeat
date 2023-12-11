@@ -4587,6 +4587,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1336074368}
+        m_TargetAssemblyTypeName: ProceduralGenerationManager, Assembly-CSharp
+        m_MethodName: OnMiniGameEnd
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1179382112
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9479,6 +9491,21 @@ PrefabInstance:
         type: 3}
       propertyPath: moveSpeed
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6978151733386668636, guid: 5ae94789542be054190a8b8907ca1d3e,
+        type: 3}
+      propertyPath: m_Radius
+      value: 2.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 6978151733386668636, guid: 5ae94789542be054190a8b8907ca1d3e,
+        type: 3}
+      propertyPath: m_Center.y
+      value: 0.67
+      objectReference: {fileID: 0}
+    - target: {fileID: 6978151733386668636, guid: 5ae94789542be054190a8b8907ca1d3e,
+        type: 3}
+      propertyPath: m_Center.z
+      value: 1.89
       objectReference: {fileID: 0}
     - target: {fileID: 7929591342213996957, guid: 5ae94789542be054190a8b8907ca1d3e,
         type: 3}
