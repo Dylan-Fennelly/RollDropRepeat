@@ -392,6 +392,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: 33ecdaba3b3194446bcfbe552ffbd2c6, type: 2}
   IsRunning: 0
+  guideWindow: {fileID: 0}
   rockSlider: {fileID: 408157533}
   cam: {fileID: 804405168}
   audioData: {fileID: 11400000, guid: 42313bf68461b294d87f59b59854f00a, type: 2}
@@ -1131,6 +1132,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: 25e2232b6a84a6746a54c1303d5e4602, type: 2}
   IsRunning: 0
+  guideWindow: {fileID: 0}
   rockSlider: {fileID: 1131942515}
   cam: {fileID: 1933948479}
   audioData: {fileID: 11400000, guid: b69bd61f71cd4954fa3092cb91536f69, type: 2}
@@ -3803,6 +3805,41 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &856799720
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 856799721}
+  m_Layer: 5
+  m_Name: Guide
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &856799721
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 856799720}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1687704203}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &873723505
 GameObject:
   m_ObjectHideFlags: 0
@@ -6921,6 +6958,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: e89dcdc59bbf9e14b832f2eebe838f98, type: 2}
   IsRunning: 0
+  guideWindow: {fileID: 0}
   rockSlider: {fileID: 1826177568}
   cam: {fileID: 134876154}
   audioData: {fileID: 11400000, guid: 8cb19dda713ce1b42bebc35f3b21650e, type: 2}
@@ -7250,6 +7288,7 @@ RectTransform:
   m_Children:
   - {fileID: 1317258471}
   - {fileID: 873723506}
+  - {fileID: 856799721}
   m_Father: {fileID: 1834798193}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -7957,6 +7996,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: 54ef45ba63a3c054e9e312207c7dcffb, type: 2}
   IsRunning: 0
+  guideWindow: {fileID: 0}
   rockSlider: {fileID: 1317258472}
   cam: {fileID: 395907315}
   audioData: {fileID: 11400000, guid: 21119f5b90aaefd44bbb2503cb067bfc, type: 2}
@@ -9218,6 +9258,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: 915ca1d8a7ddbb0438f47d1499aa4957, type: 2}
   IsRunning: 0
+  guideWindow: {fileID: 0}
   rockSlider: {fileID: 730559589}
   cam: {fileID: 914593014}
   audioData: {fileID: 11400000, guid: f78c82b425808cf4c8285cb7a3463853, type: 2}

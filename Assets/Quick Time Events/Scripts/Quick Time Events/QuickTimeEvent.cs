@@ -17,6 +17,11 @@ public abstract class QuickTimeEvent : MonoBehaviour
     protected bool IsRunning = false;
     private bool IsFinished = false;
     private float Time;
+
+    
+    [SerializeField]
+    GameObject guideWindow;
+    private bool guideShow = false;
     
     protected float RockPosition = 0;
     [SerializeField]
@@ -40,6 +45,10 @@ public abstract class QuickTimeEvent : MonoBehaviour
     
     void Update()
     {
+        if (guideShow)
+        {
+            ConfirmGuide();
+        }
         if (IsRunning)
         {
             HandleInput();
@@ -50,6 +59,17 @@ public abstract class QuickTimeEvent : MonoBehaviour
 
     protected abstract void HandleInput();
 
+    private void ConfirmGuide()
+    {
+        if (Input.GetKeyDown("W"))
+        {
+            guideShow = false;
+            guideWindow.SetActive(false);
+            Time = UnityEngine.Time.time;
+            IsRunning = true;
+            PlaySfxSounds();
+        }
+    }
 
     protected virtual void HandleMovement()
     {
@@ -68,11 +88,9 @@ public abstract class QuickTimeEvent : MonoBehaviour
     public virtual void StartQTE()
     {
         audioData.audioEvents.playSound.Raise(audioData.MusicData);
-        PlaySfxSounds();
-        IsRunning = true;
+        guideShow = true;
         IsFinished = false;
         Progress = 0;
-        Time = UnityEngine.Time.time;
         cam.enabled = true;
     }
 
