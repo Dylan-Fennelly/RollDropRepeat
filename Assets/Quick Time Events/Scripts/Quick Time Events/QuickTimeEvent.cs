@@ -92,6 +92,10 @@ public abstract class QuickTimeEvent : MonoBehaviour
         IsFinished = false;
         Progress = 0;
         cam.enabled = true;
+        guideWindow.SetActive(true);
+        
+        progressBar.fillAmount = 0;
+        rockSlider.value = RockPosition;
     }
 
     private void Finish()

@@ -17,6 +17,6 @@ MonoBehaviour:
   averageTime: {x: 0, y: 0}
   otherMovement: {x: 0.6, y: 0.9}
   otherRange: {x: 30, y: 85}
-  markMargin: 3
-  movementRegenerateTime: 0.2
+  markMargin: 4
+  randomizeMovementSpeedTime: 0.2
   movementTick: 0.0005
