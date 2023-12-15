@@ -2215,7 +2215,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &399302856
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2478,7 +2478,7 @@ RectTransform:
   m_Father: {fileID: 1363375574}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -6031,6 +6031,14 @@ MonoBehaviour:
   aImage: {fileID: 308505604}
   sImage: {fileID: 648018285}
   dImage: {fileID: 428728362}
+  sissyOne: {fileID: 11400000, guid: 31a99a097cbfb5c498435c1c330f26b6, type: 2}
+  sissyTwo: {fileID: 11400000, guid: 17dff2720689d684c967edfc3d82af49, type: 2}
+  hades: {fileID: 11400000, guid: fd499bfb9bb6d9243a8a9fba8f01670a, type: 2}
+  sissyThree: {fileID: 11400000, guid: 879fa7302665e594081722338865d8be, type: 2}
+  hadesTwo: {fileID: 11400000, guid: e09ab939ac3b05045bbaca7ee9b4efe4, type: 2}
+  sissyFour: {fileID: 11400000, guid: 89478719923e56c42805e2340ca4b6b4, type: 2}
+  sissyFive: {fileID: 11400000, guid: 67d3c8075ec88b44197680ee0e7c866f, type: 2}
+  hadesThree: {fileID: 11400000, guid: 0a0af69b8f355c04983e4d5f2a3749ab, type: 2}
 --- !u!82 &1213422285 stripped
 AudioSource:
   m_CorrespondingSourceObject: {fileID: 5991198091500803337, guid: 5ae94789542be054190a8b8907ca1d3e,
@@ -9421,8 +9429,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1381744941}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
