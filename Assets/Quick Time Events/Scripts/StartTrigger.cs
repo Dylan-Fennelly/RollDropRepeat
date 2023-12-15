@@ -12,6 +12,12 @@ public class StartTrigger : MonoBehaviour
     public void StartEvent()
     {
         eventToStart.Raise(new Empty());
-        GameObject.Destroy(gameObject);
+        StartCoroutine(turnOff());
+    }
+    
+    private IEnumerator turnOff()
+    {
+        yield return new WaitForSeconds(2f);
+        GetComponent<BoxCollider>().enabled = false;
     }
 }
