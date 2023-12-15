@@ -59,9 +59,9 @@ public abstract class QuickTimeEvent : MonoBehaviour
 
     protected abstract void HandleInput();
 
-    private void ConfirmGuide()
+    protected virtual void ConfirmGuide()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.S))
         {
             guideShow = false;
             guideWindow.SetActive(false);
