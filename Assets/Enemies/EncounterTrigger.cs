@@ -13,5 +13,6 @@ public class EncounterTrigger : MonoBehaviour
     public void HandleEncounter()
     {
         encounterEvent.Raise(data);
+        GameObject.Destroy(gameObject);
     }
 }

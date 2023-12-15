@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d87e9c37b1c2493d8f17c86728024b0c, type: 3}
-  m_Name: Timing_Medium
+  m_Name: Hades_Medium
   m_EditorClassIdentifier: 
-  goal: 8
+  goal: 4
   rockSpeed: 0
   averageTime: {x: 0, y: 0}
-  otherMovement: {x: 0.6, y: 0.9}
-  otherRange: {x: 30, y: 85}
-  markMargin: 4
-  randomizeMovementSpeedTime: 0.2
-  movementTick: 0.0005
+  otherMovement: {x: 0, y: 0}
+  otherRange: {x: 0, y: 0}
+  markMargin: 0
+  randomizeMovementSpeedTime: 0
+  movementTick: 0
