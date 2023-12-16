@@ -105,6 +105,11 @@ public class AudioManager : MonoBehaviour
             StopSFX();
         }
 
+        if (sfxSource.isPlaying)
+        {
+            return;
+        }
+
         sfxSource.clip = data.clip.Count > 1 ? data.clip[Random.Range(0, data.clip.Count)] : data.clip[0];
         
         sfxSource.volume = data.volume;
@@ -116,6 +121,11 @@ public class AudioManager : MonoBehaviour
         if (data.shouldOverride)
         {
             StopUI();
+        }
+
+        if (uiSource.isPlaying)
+        {
+            return;
         }
 
         if (uiSource.isPlaying != false)
@@ -133,6 +143,11 @@ public class AudioManager : MonoBehaviour
             StopSissy();
         }
         
+        if (sissySource.isPlaying)
+        {
+            return;
+        }
+        
         sissySource.clip = data.clip.Count > 1 ? data.clip[Random.Range(0, data.clip.Count)] : data.clip[0] ;
         sissySource.volume = data.volume;
         sissySource.Play();
@@ -144,7 +159,11 @@ public class AudioManager : MonoBehaviour
         {
             StopRock();
         }
-        
+
+        if (rockSource.isPlaying)
+        {
+            return;
+        }
         rockSource.clip = data.clip.Count > 1 ? data.clip[Random.Range(0, data.clip.Count)] : data.clip[0];
         rockSource.volume = data.volume;
         rockSource.Play();
@@ -185,8 +204,6 @@ public class AudioManager : MonoBehaviour
         
         rockSource.loop = true;
         PlayRock(audioDataBundle.RockData);
-        
-        sfxSource.loop = true;
     }
     
     public void setVolume(Slider volume)

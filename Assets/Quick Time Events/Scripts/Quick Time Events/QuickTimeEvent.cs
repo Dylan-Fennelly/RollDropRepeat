@@ -1,5 +1,6 @@
 using DefaultNamespace;
 using Events.Base;
+using Events.EventListeners;
 using Events.GameEvents;
 using Sounds.Scripts;
 using Unity.VisualScripting;
@@ -17,6 +18,11 @@ public abstract class QuickTimeEvent : MonoBehaviour
     protected bool IsRunning = false;
     private bool IsFinished = false;
     private float Time;
+
+    
+    [SerializeField]
+    GameObject guideWindow;
+    private bool guideShow = false;
     
     protected float RockPosition = 0;
     [SerializeField]
@@ -31,6 +37,11 @@ public abstract class QuickTimeEvent : MonoBehaviour
     [SerializeField]
     private EmptyGameEvent qteFinished;
 
+    [SerializeField] private Image progressBar;
+
+    [SerializeField]
+    private FloatGameEvent willEvent;
+
     // Update is called once per frame
     void Awake()
     {
@@ -38,6 +49,10 @@ public abstract class QuickTimeEvent : MonoBehaviour
     
     void Update()
     {
+        if (guideShow)
+        {
+            ConfirmGuide();
+        }
         if (IsRunning)
         {
             HandleInput();
@@ -48,6 +63,17 @@ public abstract class QuickTimeEvent : MonoBehaviour
 
     protected abstract void HandleInput();
 
+    protected virtual void ConfirmGuide()
+    {
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            guideShow = false;
+            guideWindow.SetActive(false);
+            Time = UnityEngine.Time.time;
+            IsRunning = true;
+            PlaySfxSounds();
+        }
+    }
 
     protected virtual void HandleMovement()
     {
@@ -56,6 +82,7 @@ public abstract class QuickTimeEvent : MonoBehaviour
     
     private void CheckFinish()
     {
+        progressBar.fillAmount = (float)Progress / data.goal;
         if (Progress == data.goal && !IsFinished)
         {
             Finish();
@@ -65,12 +92,14 @@ public abstract class QuickTimeEvent : MonoBehaviour
     public virtual void StartQTE()
     {
         audioData.audioEvents.playSound.Raise(audioData.MusicData);
-        PlaySfxSounds();
-        IsRunning = true;
+        guideShow = true;
         IsFinished = false;
         Progress = 0;
-        Time = UnityEngine.Time.time;
         cam.enabled = true;
+        guideWindow.SetActive(true);
+        
+        progressBar.fillAmount = 0;
+        rockSlider.value = RockPosition;
     }
 
     private void Finish()
@@ -88,15 +117,15 @@ public abstract class QuickTimeEvent : MonoBehaviour
     {
         if (Time < data.averageTime.x)
         {
-            //Perfect outcome
+            willEvent.Raise(7.5f);
         }
         else if (Time > data.averageTime.y)
         {
-            //Worst outcome
+            willEvent.Raise(-15f);
         }
         else
         {
-            //Average outcome
+            willEvent.Raise(0f);
         }
         cam.enabled = false;
     }
