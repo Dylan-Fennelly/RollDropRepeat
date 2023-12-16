@@ -12,6 +12,8 @@ public class PlayerMovement : MonoBehaviour
     public float rotationSpeed = 300f; // Increased rotation speed
     [FoldoutGroup("Rotation Settings")]
     [LabelText("Rotation Angle")]
+    //range
+    [Range(0f, 45f)]
     public float rotationAngle = 10f; // Rotation angle threshold
 
     private CharacterController characterController;
@@ -58,6 +60,7 @@ public class PlayerMovement : MonoBehaviour
                 // Move the player based on the direction and gravity
                 Vector3 movement = new Vector3(horizontalInput, 0f, verticalInput).normalized * moveSpeed * Time.deltaTime;
                 movement.y += Physics.gravity.y * Time.deltaTime; // Apply gravity
+                movement.z += Physics.gravity.z * Time.deltaTime; // Apply gravity
                 characterController.Move(movement);
 
                 // Set rotation target only if moving forward
@@ -74,6 +77,7 @@ public class PlayerMovement : MonoBehaviour
             isRotating = false; // Reset rotation when not moving
         }
     }
+
     private void RotatePlayer()
     {
         if (isRotating)
@@ -81,30 +85,26 @@ public class PlayerMovement : MonoBehaviour
             float horizontalInput = Input.GetAxis("Horizontal");
 
             // Calculate the target rotation based on the player's horizontal movement
-            Vector3 direction = new Vector3(horizontalInput, 0f, 0f).normalized;
-
-            if (direction.magnitude >= 0.1f)
-            {
-                targetRotation = Quaternion.LookRotation(direction, Vector3.up);
-            }
+            Vector3 direction = new Vector3(horizontalInput, 0f, 1f).normalized;
+            targetRotation = Quaternion.LookRotation(direction, Vector3.up);
 
             float step = rotationSpeed * Time.deltaTime;
 
             // Directly set the rotation towards the targetRotation
             transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, step);
 
-            // Check if the current rotation is very close to the targetRotation
-            if (Quaternion.Angle(transform.rotation, targetRotation) < 1f)
+            // Check if the current rotation exceeds the specified angle
+            float currentRotationAngle = Mathf.DeltaAngle(0f, transform.eulerAngles.y);
+            if (Mathf.Abs(currentRotationAngle) > rotationAngle)
             {
-                // Snap to the exact targetRotation
-                transform.rotation = targetRotation;
+                // Snap to the exact rotation limit
+                transform.rotation = Quaternion.Euler(0f, Mathf.Sign(currentRotationAngle) * rotationAngle, 0f);
 
                 // Stop rotating
                 isRotating = false;
             }
         }
     }
-
     private void ReverseMovement()
     {
         isCollidingWithWall = true;
