@@ -1,5 +1,6 @@
 using DefaultNamespace;
 using Events.Base;
+using Events.EventListeners;
 using Events.GameEvents;
 using Sounds.Scripts;
 using Unity.VisualScripting;
@@ -37,6 +38,9 @@ public abstract class QuickTimeEvent : MonoBehaviour
     private EmptyGameEvent qteFinished;
 
     [SerializeField] private Image progressBar;
+
+    [SerializeField]
+    private FloatGameEvent willEvent;
 
     // Update is called once per frame
     void Awake()
@@ -113,15 +117,15 @@ public abstract class QuickTimeEvent : MonoBehaviour
     {
         if (Time < data.averageTime.x)
         {
-            //Perfect outcome
+            willEvent.Raise(7.5f);
         }
         else if (Time > data.averageTime.y)
         {
-            //Worst outcome
+            willEvent.Raise(-15f);
         }
         else
         {
-            //Average outcome
+            willEvent.Raise(0f);
         }
         cam.enabled = false;
     }

@@ -9,14 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d87e9c37b1c2493d8f17c86728024b0c, type: 3}
-  m_Name: Hades_Medium
+  m_Script: {fileID: 11500000, guid: 742d724688564162b3649748e1e5d4e4, type: 3}
+  m_Name: WillChange
   m_EditorClassIdentifier: 
-  goal: 6
-  rockSpeed: 0
-  averageTime: {x: 0, y: 0}
-  otherMovement: {x: 0, y: 0}
-  otherRange: {x: 0, y: 0}
-  markMargin: 0
-  randomizeMovementSpeedTime: 0
-  movementTick: 0
