@@ -95,6 +95,7 @@ AnimatorStateMachine:
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions:
+
   - {fileID: 1898995024702518968}
   m_StateMachineTransitions: {}
   m_StateMachineBehaviours: []
