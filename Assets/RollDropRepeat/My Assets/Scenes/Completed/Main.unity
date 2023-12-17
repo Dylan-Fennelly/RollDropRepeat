@@ -11958,7 +11958,7 @@ MonoBehaviour:
   rockSlider: {fileID: 1317258472}
   cam: {fileID: 395907315}
   audioData: {fileID: 11400000, guid: 21119f5b90aaefd44bbb2503cb067bfc, type: 2}
-  progressBar: {fileID: 0}
+  progressBar: {fileID: 873723507}
   qteStarted: {fileID: 11400000, guid: 0d5d8ed3fa607924b82ad41f5fb52670, type: 2}
   qteFinished: {fileID: 11400000, guid: cb69b6df595532944bd4985f3ae1e62c, type: 2}
   willEvent: {fileID: 11400000, guid: 1ed0bb286edceb74db7326627da2801a, type: 2}
