@@ -887,7 +887,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   willEvent: {fileID: 11400000, guid: c7ba00a170ce8314c8b432ad4dc5509d, type: 2}
-  gameOverEvent: {fileID: 0}
+  gameOverEvent: {fileID: 11400000, guid: 51e9e2a80a88da2469379cb88b6c345d, type: 2}
   maxWill: 100
 --- !u!4 &188666673
 Transform:
@@ -1740,22 +1740,27 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1991946192}
+    m_TransformParent: {fileID: 732986431}
     m_Modifications:
     - target: {fileID: 2879439030315830972, guid: 51727f029688cb5479a4964e03f058dd,
         type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2.9899166
+      objectReference: {fileID: 0}
+    - target: {fileID: 2879439030315830972, guid: 51727f029688cb5479a4964e03f058dd,
+        type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.8
+      value: 5.0701175
       objectReference: {fileID: 0}
     - target: {fileID: 2879439030315830972, guid: 51727f029688cb5479a4964e03f058dd,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 21.84
+      value: -0.20744133
       objectReference: {fileID: 0}
     - target: {fileID: 2879439030315830972, guid: 51727f029688cb5479a4964e03f058dd,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 180.3
+      value: 12.3784485
       objectReference: {fileID: 0}
     - target: {fileID: 2879439030315830972, guid: 51727f029688cb5479a4964e03f058dd,
         type: 3}
@@ -1796,16 +1801,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Hades 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8534131201539637165, guid: 51727f029688cb5479a4964e03f058dd,
-        type: 3}
-      propertyPath: m_Size.x
-      value: 7.58
-      objectReference: {fileID: 0}
-    - target: {fileID: 8534131201539637165, guid: 51727f029688cb5479a4964e03f058dd,
-        type: 3}
-      propertyPath: m_Size.y
-      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4906,6 +4901,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 106118902}
+  - {fileID: 1882366869}
   - {fileID: 308863079}
   - {fileID: 522697581}
   m_Father: {fileID: 0}
@@ -11927,7 +11923,6 @@ Transform:
   - {fileID: 1673231810}
   - {fileID: 255005344}
   - {fileID: 1926902002}
-  - {fileID: 1882366869}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2002536658
