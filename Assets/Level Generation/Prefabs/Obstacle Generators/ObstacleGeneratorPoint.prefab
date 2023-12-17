@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &4483946009246440164
+--- !u!1 &4719855102820610212
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,54 +8,61 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6388549656876102946}
-  - component: {fileID: 5744138144545736989}
-  - component: {fileID: 8313254519094187420}
+  - component: {fileID: 8356419618463095730}
+  - component: {fileID: 3099369861908566883}
+  - component: {fileID: 7255754253204012492}
   m_Layer: 0
-  m_Name: Generate Green Enemy
+  m_Name: ObstacleGeneratorPoint
   m_TagString: Untagged
-  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6388549656876102946
+--- !u!4 &8356419618463095730
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4483946009246440164}
+  m_GameObject: {fileID: 4719855102820610212}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 13.6, y: 9.46, z: 48.6}
+  m_LocalPosition: {x: 650.53723, y: -1906.4291, z: 620.115}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5744138144545736989
+--- !u!114 &3099369861908566883
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4483946009246440164}
+  m_GameObject: {fileID: 4719855102820610212}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bbb06cb5eb9470c4db32d34c5747b0d9, type: 3}
+  m_Script: {fileID: 11500000, guid: 780e81483fe86844390549bc8f060e3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstaclePrefab: {fileID: 3549182595321756227, guid: f7a7a394d1e218e4dbd33f807ddfa93e,
-    type: 3}
-  offset: 1.45
-  rotationAmount: 90
---- !u!65 &8313254519094187420
+  obstaclePrefabs:
+  - {fileID: 4483946009246440164, guid: 2b0fa9b4047d59d44a0894037c5bd3d6, type: 3}
+  - {fileID: 4483946009246440164, guid: 1042f56905ffc164380b699b6cf39f81, type: 3}
+  - {fileID: 4483946009246440164, guid: 8617f3ddbee57754b9271aa68099ee89, type: 3}
+  - {fileID: 4483946009246440164, guid: d8d5295e12c345746a4e302240984e94, type: 3}
+  - {fileID: 4483946009246440164, guid: 70df54a80755e214e85c0aa2b6f5d8c5, type: 3}
+  - {fileID: 4483946009246440164, guid: 6d7f3a11017ff294ab79fd8c7ae9a86e, type: 3}
+  - {fileID: 4483946009246440164, guid: 3f11c016f3b3a07449a2b9e95f95ab48, type: 3}
+  - {fileID: 4483946009246440164, guid: 1a0dad8be9279644e86168cc69eaf4c1, type: 3}
+  offsetLeft: -1.5
+  offsetRight: 1.5
+--- !u!65 &7255754253204012492
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4483946009246440164}
+  m_GameObject: {fileID: 4719855102820610212}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -66,7 +73,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}

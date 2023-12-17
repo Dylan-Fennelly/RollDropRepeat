@@ -48,7 +48,7 @@ MonoBehaviour:
   obstaclePrefab: {fileID: 7632192637888464753, guid: c16d42ad7adc8d04b84183d9dd804045,
     type: 3}
   offset: 1.56
-  rotationAmount: 90
+  rotationAmount: 0
 --- !u!65 &8313254519094187420
 BoxCollider:
   m_ObjectHideFlags: 0
