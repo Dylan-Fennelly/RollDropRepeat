@@ -1,3 +1,4 @@
+using Events.GameEvents;
 using UnityEngine;
 using Sirenix.OdinInspector;
 
@@ -16,11 +17,32 @@ public class PlayerMovement : MonoBehaviour
     [Range(0f, 45f)]
     public float rotationAngle = 10f; // Rotation angle threshold
 
+    [FoldoutGroup("Animation variables")]
+    [SerializeField]
+    private GameObject rock;
+    [FoldoutGroup("Animation variables")]
+    [SerializeField]
+    private Animator animator;
+    
+    [FoldoutGroup("Will Settings")]
+    [SerializeField]
+    private  FloatGameEvent willEvent;
+    
+    [FoldoutGroup("Will Settings")]
+    [SerializeField]
+    private float willAmountStanding = -0.1f;
+    
+    [FoldoutGroup("Will Settings")]
+    [SerializeField]
+    private float willAmountMoving = -0.2f;
+
     private CharacterController characterController;
     private bool isCollidingWithWall = false;
     private Quaternion targetRotation;
     private bool isRotating = false;
-    public bool canMove = true;
+    public bool canMove = false;
+
+    private static readonly int Movement = Animator.StringToHash("Movement");
 
     private void Start()
     {
@@ -31,9 +53,37 @@ public class PlayerMovement : MonoBehaviour
     {
         if (canMove)
         {
+            animator.SetFloat(Movement, Input.GetAxis("Vertical"));
             MovePlayer();
             RotatePlayer();
+            RotateRock();
         }
+    }
+
+    private void RotateRock()
+    {
+        float horizontalInput = Input.GetAxis("Vertical");
+        float verticalInput = Input.GetAxis("Horizontal");
+        
+        if (horizontalInput > 0f)
+        {
+            if (verticalInput > 0f)
+            {
+                if (verticalInput > 2f)
+                {
+                    verticalInput = 2f;
+                }
+                rock.transform.Rotate(0.2f, 0, verticalInput * 0.05f);
+            }
+            else
+            {
+                rock.transform.Rotate(0.2f, 0, 0);
+            }
+        }
+        
+
+        
+        
     }
 
     private void OnTriggerEnter(Collider other)
@@ -71,10 +121,12 @@ public class PlayerMovement : MonoBehaviour
             {
                 isRotating = false; // Stop rotating when not moving forward
             }
+            willEvent.Raise(willAmountMoving*Time.deltaTime);
         }
         else
         {
             isRotating = false; // Reset rotation when not moving
+            willEvent.Raise(willAmountStanding*Time.deltaTime);
         }
     }
 

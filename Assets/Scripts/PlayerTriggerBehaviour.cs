@@ -19,6 +19,9 @@ public class PlayerTriggerBehaviour : MonoBehaviour
         {
             other.GetComponent<EncounterTrigger>().HandleEncounter();
         }
-
+        if (other.CompareTag("Finish"))
+        {
+            other.GetComponent<WinBehaviour>().Win();
+        }
     }
 }

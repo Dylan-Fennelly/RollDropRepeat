@@ -34,11 +34,15 @@ public abstract class QuickTimeEvent : MonoBehaviour
     [SerializeField]
     protected Audio_Data_Bundle audioData;
     
+    [SerializeField] private Image progressBar;
+    
+    
+    [Header("Events")]
+    [SerializeField]
+    private EmptyGameEvent qteStarted;
     [SerializeField]
     private EmptyGameEvent qteFinished;
-
-    [SerializeField] private Image progressBar;
-
+    
     [SerializeField]
     private FloatGameEvent willEvent;
 
@@ -91,6 +95,7 @@ public abstract class QuickTimeEvent : MonoBehaviour
     
     public virtual void StartQTE()
     {
+        qteStarted.Raise(new Empty());
         audioData.audioEvents.playSound.Raise(audioData.MusicData);
         guideShow = true;
         IsFinished = false;

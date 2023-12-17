@@ -11,9 +11,14 @@ GameObject:
   - component: {fileID: 7929591342213996957}
   - component: {fileID: 5872473210250656907}
   - component: {fileID: 6039152233396671064}
-  - component: {fileID: 2742393934478915851}
   - component: {fileID: 6978151733386668636}
+  - component: {fileID: 7023343879958353622}
+  - component: {fileID: 2742393934478915851}
   - component: {fileID: 5192792507126574125}
+  - component: {fileID: 5768068354267884223}
+  - component: {fileID: 8424314285679110817}
+  - component: {fileID: 6140871239138228798}
+  - component: {fileID: 3191413654953316244}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -90,18 +95,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &2742393934478915851
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 151328558535670275}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88b1aec9941b4cc44bf27cfc8b4a74cf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!143 &6978151733386668636
 CharacterController:
   m_ObjectHideFlags: 0
@@ -128,6 +121,45 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &7023343879958353622
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 151328558535670275}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_CenterOfMass: {x: 0.5, y: 0.76, z: 2.16}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 1
+  m_Constraints: 112
+  m_CollisionDetection: 2
+--- !u!114 &2742393934478915851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 151328558535670275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88b1aec9941b4cc44bf27cfc8b4a74cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &5192792507126574125
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -140,9 +172,114 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c2156d3e5ca0774086de1c0cbe96d6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  laneWidth: 2.5
-  moveSpeed: 70
+  moveSpeed: 5
+  rotationSpeed: 200
+  rotationAngle: 20
+  rock: {fileID: 9107139470708585500}
+  animator: {fileID: 1879128751399162785}
+  willEvent: {fileID: 11400000, guid: 1ed0bb286edceb74db7326627da2801a, type: 2}
+  willAmountStanding: -2
+  willAmountMoving: -1
   canMove: 1
+--- !u!114 &5768068354267884223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 151328558535670275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb882377772e47ddab8e69f4c8a3c8e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  description: Resume Movement of QTE finish
+  Event: {fileID: 11400000, guid: cb69b6df595532944bd4985f3ae1e62c, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5192792507126574125}
+        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
+        m_MethodName: ResumeMovement
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &8424314285679110817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 151328558535670275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb882377772e47ddab8e69f4c8a3c8e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  description: Stop movement on qteStart
+  Event: {fileID: 11400000, guid: 0d5d8ed3fa607924b82ad41f5fb52670, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5192792507126574125}
+        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
+        m_MethodName: StopMovement
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &6140871239138228798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 151328558535670275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85495da53e24fe4429e89e6f35f33472, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3191413654953316244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 151328558535670275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb882377772e47ddab8e69f4c8a3c8e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  description: Reset on win
+  Event: {fileID: 11400000, guid: 4ce2d2abeb13a504fb16bd161cc9f749, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6140871239138228798}
+        m_TargetAssemblyTypeName: PlayerWinBehaviour, Assembly-CSharp
+        m_MethodName: Win
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2318217882244369068
 GameObject:
   m_ObjectHideFlags: 0
@@ -907,6 +1044,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8d386bc5f312ed44b05f99035ce2039, type: 3}
+--- !u!95 &1879128751399162785 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 4240986973388678904, guid: f8d386bc5f312ed44b05f99035ce2039,
+    type: 3}
+  m_PrefabInstance: {fileID: 2364111121385452889}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3875901765686464160 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1515173841838013433, guid: f8d386bc5f312ed44b05f99035ce2039,
@@ -1093,6 +1236,12 @@ PrefabInstance:
 --- !u!4 &8442243467122732710 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a04297e833e9e85459620eb82a9f4b92,
+    type: 3}
+  m_PrefabInstance: {fileID: 8260277680755902797}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &9107139470708585500 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: a04297e833e9e85459620eb82a9f4b92,
     type: 3}
   m_PrefabInstance: {fileID: 8260277680755902797}
   m_PrefabAsset: {fileID: 0}
