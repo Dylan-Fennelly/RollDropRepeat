@@ -6337,7 +6337,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1609495446}
         m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
-        m_MethodName: setVolume
+        m_MethodName: SetVolume
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 1580009340}
@@ -6483,7 +6483,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1609495446}
         m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
-        m_MethodName: setVolume
+        m_MethodName: SetVolume
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 1587456960}

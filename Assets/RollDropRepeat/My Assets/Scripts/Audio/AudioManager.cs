@@ -79,7 +79,11 @@ public class AudioManager : MonoBehaviour
                 break;
         }
         
+        sissySource.loop = false;
+        rockSource.loop = false;
         uiSource.loop = false;
+        sfxSource.loop = false;
+        musicSource.loop = true;
     }
     
     private void PlayMusic(Audio_Data data)
@@ -92,7 +96,6 @@ public class AudioManager : MonoBehaviour
         if (!musicSource.isPlaying)
         {
             musicSource.clip = data.clip.Count > 1 ? data.clip[Random.Range(0, data.clip.Count)] : data.clip[0];
-        
             musicSource.volume = data.volume;
             musicSource.Play();
         }
@@ -196,17 +199,24 @@ public class AudioManager : MonoBehaviour
     
     public void PlayBasedSounds()
     {
-        musicSource.loop = true;
+        StopSounds();
         PlayMusic(audioDataBundle.MusicData);
-    
-        sissySource.loop = true;
+    }
+
+    public void PlayMovementSounds()
+    {
         PlaySissy(audioDataBundle.SissyData);
-        
-        rockSource.loop = true;
         PlayRock(audioDataBundle.RockData);
     }
     
-    public void setVolume(Slider volume)
+    public void StopSounds()
+    {
+        StopSissy();
+        StopRock();
+        StopSFX();
+    }
+    
+    public void SetVolume(Slider volume)
     {
         float volumeValue = Mathf.Log10(volume.value) * 20;
         audioMixer.SetFloat("MasterVolume", volumeValue);

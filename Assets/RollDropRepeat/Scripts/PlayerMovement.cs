@@ -1,3 +1,4 @@
+using Events.Base;
 using Events.GameEvents;
 using UnityEngine;
 using Sirenix.OdinInspector;
@@ -30,11 +31,21 @@ public class PlayerMovement : MonoBehaviour
     
     [FoldoutGroup("Will Settings")]
     [SerializeField]
-    private float willAmountStanding = -0.1f;
+    private float willAmountStanding = -2f;
     
     [FoldoutGroup("Will Settings")]
     [SerializeField]
-    private float willAmountMoving = -0.2f;
+    private float willAmountMoving = -1f;
+    
+    [FoldoutGroup("Audio Settings")]
+    [SerializeField]
+    private EmptyGameEvent movementSoundsEvent;
+    
+    [FoldoutGroup("Audio Settings")]
+    [SerializeField]
+    private EmptyGameEvent stopMovementSoundsEvent;
+    
+    
 
     private CharacterController characterController;
     private bool isCollidingWithWall = false;
@@ -122,11 +133,13 @@ public class PlayerMovement : MonoBehaviour
                 isRotating = false; // Stop rotating when not moving forward
             }
             willEvent.Raise(willAmountMoving*Time.deltaTime);
+            movementSoundsEvent.Raise(new Empty());
         }
         else
         {
             isRotating = false; // Reset rotation when not moving
             willEvent.Raise(willAmountStanding*Time.deltaTime);
+            stopMovementSoundsEvent.Raise(new Empty());
         }
     }
 

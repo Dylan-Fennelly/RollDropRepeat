@@ -9262,7 +9262,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1609495446}
         m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
-        m_MethodName: setVolume
+        m_MethodName: SetVolume
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 1580009340}
@@ -9408,7 +9408,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1609495446}
         m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
-        m_MethodName: setVolume
+        m_MethodName: SetVolume
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 1587456960}
@@ -9505,6 +9505,7 @@ GameObject:
   - component: {fileID: 1609495446}
   - component: {fileID: 1609495445}
   - component: {fileID: 1609495448}
+  - component: {fileID: 1609495449}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: Untagged
@@ -9595,6 +9596,35 @@ MonoBehaviour:
       - m_Target: {fileID: 1609495446}
         m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
         m_MethodName: PlayBasedSounds
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1609495449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1609495444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb882377772e47ddab8e69f4c8a3c8e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  description: Movement sounds
+  Event: {fileID: 11400000, guid: 74d611e77bfbd53449742f276c9e3f6d, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1609495446}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: PlayMovementSounds
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -12906,6 +12936,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0.005
       objectReference: {fileID: 0}
+    - target: {fileID: 1169528351706855722, guid: 66f4c3cfd9337264e9889ecc9dfab2ab,
+        type: 3}
+      propertyPath: movementSoundsEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: 74d611e77bfbd53449742f276c9e3f6d,
+        type: 2}
     - target: {fileID: 5158221317458850892, guid: 66f4c3cfd9337264e9889ecc9dfab2ab,
         type: 3}
       propertyPath: m_Name

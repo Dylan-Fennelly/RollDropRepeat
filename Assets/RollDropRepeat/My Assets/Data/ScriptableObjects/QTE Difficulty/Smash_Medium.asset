@@ -13,7 +13,10 @@ MonoBehaviour:
   m_Name: Smash_Medium
   m_EditorClassIdentifier: 
   goal: 50
-  averageTime: {x: 0, y: 0}
-  movementSpeed: {x: 0, y: 0}
-  markRange: {x: 0, y: 0}
+  rockSpeed: 0
+  averageTime: {x: 9, y: 14}
+  otherMovement: {x: 0, y: 0}
+  otherRange: {x: 0, y: 0}
   markMargin: 0
+  randomizeMovementSpeedTime: 0
+  movementTick: 0

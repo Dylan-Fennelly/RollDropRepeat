@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   goal: 1500
   rockSpeed: 0.2
-  averageTime: {x: 0, y: 0}
+  averageTime: {x: 14, y: 20}
   otherMovement: {x: -0.4, y: 0.4}
   otherRange: {x: 10, y: 90}
   markMargin: 5
-  movementRegenerateTime: 0.4
+  randomizeMovementSpeedTime: 0.4
   movementTick: 0.0005

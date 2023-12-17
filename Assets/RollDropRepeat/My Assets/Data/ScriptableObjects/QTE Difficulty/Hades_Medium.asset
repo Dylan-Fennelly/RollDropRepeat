@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   goal: 6
   rockSpeed: 0
-  averageTime: {x: 0, y: 0}
+  averageTime: {x: 7, y: 12}
   otherMovement: {x: 0, y: 0}
   otherRange: {x: 0, y: 0}
   markMargin: 0
