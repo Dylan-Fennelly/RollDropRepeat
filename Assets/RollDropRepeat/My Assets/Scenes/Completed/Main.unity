@@ -994,7 +994,7 @@ MonoBehaviour:
   guideWindow: {fileID: 55478859}
   rockSlider: {fileID: 408157533}
   cam: {fileID: 804405168}
-  audioData: {fileID: 11400000, guid: 42313bf68461b294d87f59b59854f00a, type: 2}
+  audioData: {fileID: 11400000, guid: bf11cceac93c39b4aa9c9aa643b1f7d6, type: 2}
   progressBar: {fileID: 375049874}
   qteStarted: {fileID: 11400000, guid: 0d5d8ed3fa607924b82ad41f5fb52670, type: 2}
   qteFinished: {fileID: 11400000, guid: cb69b6df595532944bd4985f3ae1e62c, type: 2}
