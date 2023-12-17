@@ -9,10 +9,21 @@ public class EncounterTrigger : MonoBehaviour
     private Enemy_Data data;
     [SerializeField]
     private EnemyGameEvent encounterEvent;
+    
+    [SerializeField]
+    private ParticleSystem particleSystem;
+    
+    [SerializeField]
+    private List<GameObject> enemies = new List<GameObject>();
 
     public void HandleEncounter()
     {
         encounterEvent.Raise(data);
-        GameObject.Destroy(gameObject);
+        particleSystem.Play();
+        
+        foreach (var enemy in enemies)
+        {
+            enemy.SetActive(false);
+        }
     }
 }

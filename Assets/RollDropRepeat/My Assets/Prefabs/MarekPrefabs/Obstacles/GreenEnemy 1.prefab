@@ -9805,6 +9805,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: 2889ab368c43a1a46bf0bc8240688853, type: 2}
   encounterEvent: {fileID: 11400000, guid: daf133d68db65844286a1dccfe6d4c74, type: 2}
+  particleSystem: {fileID: 311138294252081331}
+  enemies:
+  - {fileID: 6916973591827086088}
+  - {fileID: 5759359159751959454}
+  - {fileID: 8271746412837819167}
+  - {fileID: 4293682899715448410}
+  - {fileID: 7727604636936802646}
+  - {fileID: 6976373683085761749}
+  - {fileID: 7742606625686533457}
 --- !u!1 &4143195346322258581
 GameObject:
   m_ObjectHideFlags: 0

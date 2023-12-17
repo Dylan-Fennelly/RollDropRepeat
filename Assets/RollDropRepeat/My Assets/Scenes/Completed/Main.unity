@@ -7544,30 +7544,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1336074368}
-        m_TargetAssemblyTypeName: ProceduralGenerationManager, Assembly-CSharp
-        m_MethodName: OnMiniGameStart
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1336074368}
-        m_TargetAssemblyTypeName: ProceduralGenerationManager, Assembly-CSharp
-        m_MethodName: OnMiniGameEnd
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &1179382112
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11369,6 +11345,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: 2889ab368c43a1a46bf0bc8240688853, type: 2}
   encounterEvent: {fileID: 11400000, guid: daf133d68db65844286a1dccfe6d4c74, type: 2}
+  particleSystem: {fileID: 0}
+  enemies: []
 --- !u!65 &1720916626
 BoxCollider:
   m_ObjectHideFlags: 0
