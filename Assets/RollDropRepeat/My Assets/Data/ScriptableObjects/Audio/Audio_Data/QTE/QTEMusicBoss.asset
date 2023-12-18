@@ -16,4 +16,4 @@ MonoBehaviour:
   - {fileID: 8300000, guid: bf1c4aeadc722c947917bb41e12e2772, type: 3}
   type: 0
   shouldOverride: 1
-  volume: 1
+  volume: 0.7
