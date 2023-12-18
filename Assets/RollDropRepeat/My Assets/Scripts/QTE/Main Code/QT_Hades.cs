@@ -32,21 +32,27 @@ namespace DefaultNamespace
         [SerializeField]
         private Audio_Data sissyTwo;
         [SerializeField]
-        private Audio_Data hades;
+        private Audio_Data hadesOne;
+        [SerializeField]
+        private Audio_Data hadesTwo;
+        [SerializeField]
+        private Audio_Data sissyThree;
         
         [Header("Second Dialog")]
         [SerializeField]
-        private Audio_Data sissyThree;
-        [SerializeField]
-        private Audio_Data hadesTwo;
-        
-        [Header("Third Dialog")]
-        [SerializeField]
         private Audio_Data sissyFour;
+        [SerializeField]
+        private Audio_Data hadesThree;
+        [SerializeField]
+        private Audio_Data hadesFour;
+
+        [Header("Third Dialog")]
         [SerializeField]
         private Audio_Data sissyFive;
         [SerializeField]
-        private Audio_Data hadesThree;
+        private Audio_Data hadesFive;
+        [SerializeField]
+        private Audio_Data sissySix;
         
         
         
@@ -158,25 +164,33 @@ namespace DefaultNamespace
         {
             audioData.audioEvents.playSound.Raise(sissyOne);
             yield return new WaitForSeconds(sissyOne.clip[0].length);
-            audioData.audioEvents.playSound.Raise(hades);
-            yield return new WaitForSeconds(hades.clip[0].length);
             audioData.audioEvents.playSound.Raise(sissyTwo);
+            yield return new WaitForSeconds(sissyTwo.clip[0].length);
+            audioData.audioEvents.playSound.Raise(hadesOne);
+            yield return new WaitForSeconds(hadesOne.clip[0].length);
+            audioData.audioEvents.playSound.Raise(hadesTwo);
+            yield return new WaitForSeconds(hadesTwo.clip[0].length);
+            audioData.audioEvents.playSound.Raise(sissyThree);
+            yield return new WaitForSeconds(sissyThree.clip[0].length);
         }
         
         private IEnumerator DialogTwo()
-        {
-            audioData.audioEvents.playSound.Raise(sissyThree);
-            yield return new WaitForSeconds(sissyThree.clip[0].length);
-            audioData.audioEvents.playSound.Raise(hadesTwo);
-        }
-        
-        private IEnumerator DialogThree()
         {
             audioData.audioEvents.playSound.Raise(sissyFour);
             yield return new WaitForSeconds(sissyFour.clip[0].length);
             audioData.audioEvents.playSound.Raise(hadesThree);
             yield return new WaitForSeconds(hadesThree.clip[0].length);
+            audioData.audioEvents.playSound.Raise(hadesFour);
+        }
+        
+        private IEnumerator DialogThree()
+        {
             audioData.audioEvents.playSound.Raise(sissyFive);
+            yield return new WaitForSeconds(sissyFive.clip[0].length);
+            audioData.audioEvents.playSound.Raise(hadesFive);
+            yield return new WaitForSeconds(hadesFive.clip[0].length);
+            audioData.audioEvents.playSound.Raise(sissySix);
+
             
         }
     }

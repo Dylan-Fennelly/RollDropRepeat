@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b67c189f54fff1f4d9204c6ca5f5ed6d, type: 3}
-  m_Name: HadesThree_Dialog
+  m_Name: sissySix_Dialog
   m_EditorClassIdentifier: 
   clip:
-  - {fileID: 8300000, guid: c3c62d4aca76c65479fb8027992f8b6a, type: 3}
-  type: 1
+  - {fileID: 8300000, guid: aecb79f7065457349a9cc91971dfb510, type: 3}
+  type: 2
   shouldOverride: 1
   volume: 1

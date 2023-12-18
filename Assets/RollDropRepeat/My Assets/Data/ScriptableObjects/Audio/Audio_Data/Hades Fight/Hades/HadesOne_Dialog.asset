@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: HadesOne_Dialog
   m_EditorClassIdentifier: 
   clip:
-  - {fileID: 8300000, guid: f301899781ae8384dbcc471aeb7e6016, type: 3}
+  - {fileID: 8300000, guid: c7d003366c8ad154eb09eadca3cf0b8d, type: 3}
   type: 1
   shouldOverride: 1
   volume: 1

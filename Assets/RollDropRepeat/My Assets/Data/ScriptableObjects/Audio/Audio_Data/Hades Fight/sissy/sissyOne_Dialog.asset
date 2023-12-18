@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: sissyOne_Dialog
   m_EditorClassIdentifier: 
   clip:
-  - {fileID: 8300000, guid: ae7ebf5b3f428e54a83c762a9debfff1, type: 3}
+  - {fileID: 8300000, guid: c00ba5f79b6c1f44ca9d03526a1eb9e2, type: 3}
   type: 2
   shouldOverride: 1
   volume: 1
