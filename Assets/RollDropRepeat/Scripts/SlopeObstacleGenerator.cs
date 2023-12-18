@@ -6,16 +6,23 @@ public class SlopeObstacleGenerator : MonoBehaviour
     public GameObject obstaclePrefab;
     public float offset = 1.5f;
     public float rotationAmount = 90f;
+    public float leftOffset = -1.5f;
+    public float rightOffset = 1.5f;
 
     void Start()
     {
         GenerateObstacles();
     }
+    //Delete the spawner after it has spawned the obstacle as it is no longer needed
+     void Update()
+    {
+        Destroy(gameObject);
+    }
 
     void GenerateObstacles()
     {
         // Generate random position around the empty's transform
-        float randomX = Random.Range(-1f, 1f);
+        float randomX = Random.Range( leftOffset, rightOffset);
 
         // Raycast to find the ground position
         RaycastHit hit;
