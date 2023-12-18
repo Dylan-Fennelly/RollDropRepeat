@@ -45,6 +45,12 @@ public abstract class QuickTimeEvent : MonoBehaviour
     
     [SerializeField]
     private FloatGameEvent willEvent;
+    
+    [SerializeField]
+    private EmptyGameEvent QTEWinEvent;
+    
+    [SerializeField]
+    private EmptyGameEvent QTELoseEvent;
 
     // Update is called once per frame
     void Awake()
@@ -123,14 +129,17 @@ public abstract class QuickTimeEvent : MonoBehaviour
         if (Time < data.averageTime.x)
         {
             willEvent.Raise(7.5f);
+            QTEWinEvent.Raise(new Empty());
         }
         else if (Time > data.averageTime.y)
         {
             willEvent.Raise(-15f);
+            QTELoseEvent.Raise(new Empty());
         }
         else
         {
             willEvent.Raise(0f);
+            QTEWinEvent.Raise(new Empty());
         }
         cam.enabled = false;
     }

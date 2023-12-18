@@ -28,6 +28,11 @@ public class AudioManager : MonoBehaviour
     [SerializeField]
     private Audio_Data_Bundle audioDataBundle;
     
+    [SerializeField]
+    private Audio_Data winSound;
+    [SerializeField]
+    private Audio_Data loseSound;
+    
     private void Awake()
     {
         if (musicSource == null)
@@ -130,13 +135,10 @@ public class AudioManager : MonoBehaviour
         {
             return;
         }
-
-        if (uiSource.isPlaying != false)
-        {
-            uiSource.clip = data.clip.Count > 1 ? data.clip[Random.Range(0, data.clip.Count)] : data.clip[0];
-            uiSource.volume = data.volume;
-            uiSource.Play();
-        }
+        
+        uiSource.clip = data.clip.Count > 1 ? data.clip[Random.Range(0, data.clip.Count)] : data.clip[0];
+        uiSource.volume = data.volume;
+        uiSource.Play();
     }
     
     private void PlaySissy(Audio_Data data)
@@ -222,6 +224,10 @@ public class AudioManager : MonoBehaviour
         audioMixer.SetFloat("MasterVolume", volumeValue);
     }
     
+    public void PlayWinSound(bool isWin)
+    {
+        PlayUI(isWin ? winSound : loseSound);
+    }
 }
 
 
